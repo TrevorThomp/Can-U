@@ -29,6 +29,6 @@ MVPs
 
 # Requirements
 [User Stories](#)
-[Group Agreement]()
+[Group Agreement](./group-agreement.md)
 # Diagrams
 
