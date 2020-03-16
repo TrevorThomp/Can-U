@@ -30,6 +30,9 @@ If those involved are unable to reach a resolution, we will involve the other me
 For any conflict that cannot be resolved according to these guidelines, we will involve an instructor to mediate as a method of last resort. 
 
 **Workflow:** 
+ - Every morning at 9 AM, we check-in on zoom, decide on whether in-person meeting is necessary. 
+ - Check-ins at 12 PM, 3PM and end of day, 5PM. 
+ - Discuss after hours work at end of day check-in.
  - We will maintain a single repo through GitHub: https://github.com/401-backend/can-u-job-front-end
  - All team members act as equal contributors, and will clone the initial master branch with approved scaffolding to their individual local repositories.
  - We will all work on our own branches, push to our branch in GitHub and then PR to the Dev branch 
@@ -49,7 +52,7 @@ For any conflict that cannot be resolved according to these guidelines, we will 
  - We will all pull from the master branch each morning, as a group, and after all outstanding pull requests have been assimilated.  
 
 **Communication:**
-We will communicate and share resources through a group slack channel.
+We will communicate and share resources through a group slack channel and zoom meetings.
 We will organize tasks through Trello.  
 We will host an internal check-in meeting each morning for each member to update the team on their progress on any/all tasks or deliverables. Any edits to the project plan will be made as a result of these check-ins. 
 We will conclude with a reflection meeting and a final update of our Trello board. 
