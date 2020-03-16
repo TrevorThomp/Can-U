@@ -43,3 +43,7 @@ MVPs
 ![](./mock-ups/dashboard.png)
 ### Main Job List
 ![](./mock-ups/mainlist.png)
+### Job Details Modal
+![](./mock-ups/details.png)
+### Login
+![](./mock-ups/login.png)
