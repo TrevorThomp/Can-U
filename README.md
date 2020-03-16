@@ -25,6 +25,7 @@ MVPs
 
 # Stretch
 * Graphs showing overall statistics of the entire application
+* Add rating system to increase user credibility
 
  
  
