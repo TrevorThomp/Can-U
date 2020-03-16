@@ -38,4 +38,8 @@ MVPs
 
 ## Data Flow
 ![](./can-u-front.png)
-
+## Mock ups/Wire Frames
+### Dashboard
+![](./mock-ups/dashboard.png)
+### Main Job List
+![](./mock-ups/mainlist.png)
