@@ -28,7 +28,7 @@ MVPs
 [Trello](https://trello.com/b/7CutaFuI/canu)
 
 # Requirements
-[User Stories](./user-stories.md)
-[Group Agreement](./group-agreement.md)
+* [User Stories](./user-stories.md)
+* [Group Agreement](./group-agreement.md)
 # Diagrams
 

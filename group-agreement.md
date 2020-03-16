@@ -56,7 +56,7 @@ We will conclude with a reflection meeting and a final update of our Trello boar
 We will participate in daily standups with Instructors. 
 
 **Technology and Tools:**
-The Organization will be created by Lindsay, with all other members added as admin users. 
+The Organization will be created by David, with all other members added as admin users. 
 The Github repository will be initialized by Travis, with all other members added as collaborators.
-The Trello board will be created by Lindsay, with all other members added as admin users. 
+The Trello board will be created by Natalie, with all other members added as admin users. 
 We will deploy our web app through Heroku. 
