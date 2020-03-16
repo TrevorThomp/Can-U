@@ -30,7 +30,7 @@ If those involved are unable to reach a resolution, we will involve the other me
 For any conflict that cannot be resolved according to these guidelines, we will involve an instructor to mediate as a method of last resort. 
 
 **Workflow:** 
- - We will maintain a single repo through GitHub: https://github.com/Apprenti-401-ProjectOne/ProjectOne
+ - We will maintain a single repo through GitHub: https://github.com/401-backend/can-u-job-front-end
  - All team members act as equal contributors, and will clone the initial master branch with approved scaffolding to their individual local repositories.
  - We will all work on our own branches, push to our branch in GitHub and then PR to the Dev branch 
  - As a group, we will PR from Dev to the Master for major features
