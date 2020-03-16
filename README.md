@@ -12,16 +12,16 @@ MVPs
 
 
 # MVPs
-1 - When a user enters the page, present them with a login component.
-2 - A component for users to browse open jobs.
-3 - When a user is logged in, present them with a main dashboard showing them their jobs, a way to create jobs and ways to edit their jobs.
-4 - A component that presents a form that allows a user to create a new job.
-5 - A component that shows a detailed view of a particular job
-6 - On the detail view, a user can place a bid.
-7 - Have a slightly different super user dashboard with the ability to delete or edit any job within the database.
-8 - Have users be notified of activity through email on their jobs and jobs they have bid.Have a button on the login form to alternatively login using OAuth.
-9 - Dark mode/light mode options
-10 - Job history
+1. When a user enters the page, present them with a login component.
+2. A component for users to browse open jobs.
+3. When a user is logged in, present them with a main dashboard showing them their jobs, a way to create jobs and ways to edit their jobs.
+4. A component that presents a form that allows a user to create a new job.
+5. A component that shows a detailed view of a particular job
+6. On the detail view, a user can place a bid.
+7. Have a slightly different super user dashboard with the ability to delete or edit any job within the database.
+8. Have users be notified of activity through email on their jobs and jobs they have bid.Have a button on the login form to alternatively login using OAuth.
+9. Dark mode/light mode options
+10. Job history
 
 # Stretch
 * Graphs showing overall statistics of the entire application
