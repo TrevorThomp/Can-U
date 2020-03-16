@@ -24,10 +24,11 @@ MVPs
 * Dark mode/light mode options
  
  
-Trello Board
-Trello
-Requirements
-#USERSTORIES
-Group Agreement
-Diagrams
+# Trello Board
+[Trello](https://trello.com/b/7CutaFuI/canu)
+
+# Requirements
+[User Stories](#)
+[Group Agreement]()
+# Diagrams
 
