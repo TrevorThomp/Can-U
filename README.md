@@ -18,10 +18,12 @@ MVPs
 * On the detail view, a user can place a bid.
 * Have a slightly different super user dashboard with the ability to delete or edit any job within the database.
 * Have users be notified of activity through email on their jobs and jobs they have bid.Have a button on the login form to alternatively login using OAuth.
+* Dark mode/light mode options
+* Job history
 
 # Stretch
-* A page to view graphs with job history, stats, etc. (just an idea)
-* Dark mode/light mode options
+* Graphs showing overall statistics of the entire application
+
  
  
 # Trello Board
