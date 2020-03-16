@@ -36,3 +36,6 @@ MVPs
 * [Group Agreement](./group-agreement.md)
 # Diagrams
 
+## Data Flow
+![](./can-u-front.png)
+
