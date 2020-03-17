@@ -41,5 +41,19 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
     );
 };
 
-export { callAPI, callAPIBasic };
+const callAPISignUp = (url, body, errorHandler) => {
+  return fetch(url, {
+    method: 'POST',
+    mode: "cors",
+    cache: "no-cache",
+    headers: { "Content-Type": "application/json" },
+    body: body ? JSON.stringify(body) : undefined
+  })
+    .then(response => response.text())
+    .catch(e =>
+      typeof errorHandler === "function" ? errorHandler(e) : console.error(e)
+    );
+};
+
+export { callAPI, callAPIBasic, callAPISignUp };
 

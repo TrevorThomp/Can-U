@@ -59,7 +59,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
-  handleSignIn: data => dispatch(actions.signIn(data)),
+  handleSignIn: data => dispatch(actions.signInFetch(data)),
 });
 
 export default connect(

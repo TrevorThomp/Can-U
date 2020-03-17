@@ -30,7 +30,7 @@ const SignUp = props => {
       password: password,
       email: email,
     }
-    props.handleSignup(body);
+    props.handleSignUp(body);
   }
 
   const handleOauth = () => {
@@ -65,7 +65,7 @@ const SignUp = props => {
             onChange={handleInputChange}
           />
         </label>
-        <input type="submit" value="Log In" />
+        <input type="submit" value="Sign Up" />
       </form>
       <p onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Already a member?.. click to login</p>
       <button onSubmit={handleOauth} >Signup with Google</button>
@@ -78,7 +78,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
-  handleSignUp: data => dispatch(actions.signUp(data)),
+  handleSignUp: data => dispatch(actions.signUpFetch(data)),
 });
 
 export default connect(
