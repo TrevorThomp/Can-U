@@ -6,8 +6,14 @@ const SignIn = props => {
   const [password, setPassword] = useState('');
 
   const handleInputChange = (e) => {
-    if(e.target.name === 'username') setUsername(e.target.value);
-    if(e.target.name === 'password') setPassword(e.target.value);
+    switch(e.target.name){
+      case 'username':
+        setUsername(e.target.value);
+        break;
+      case 'password':
+        setPassword(e.target.value);
+        break;
+    }
   }
 
   const handleFormSubmit = (e) => {
@@ -19,7 +25,7 @@ const SignIn = props => {
   }
 
   return (
-    <>
+    <div>
       <form onSubmit={handleFormSubmit}>
         <input
           placeholder="username"
@@ -34,7 +40,8 @@ const SignIn = props => {
         <input type="submit" value="Log In" />
       </form>
       <button onSubmit={handleOauth} >Login with Google</button>
-    </>
+      <button onSubmit={handleOauth} >Login with GitHub</button>
+    </div>
   )
 }
 
