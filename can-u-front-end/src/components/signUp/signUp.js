@@ -22,7 +22,8 @@ const SignUp = props => {
   }
 
   const handleFormSubmit = (e) => {
-
+    e.preventDefault();
+    console.log('signup', username, email, password);
   }
 
   const handleOauth = () => {
@@ -61,4 +62,4 @@ const SignUp = props => {
   )
 }
 
-export default SignIn;
+export default SignUp;

@@ -6,6 +6,7 @@ const SignIn = props => {
   const [password, setPassword] = useState('');
 
   const handleInputChange = (e) => {
+    console.log(e.target.name);
     switch(e.target.name){
       case 'username':
         setUsername(e.target.value);
@@ -17,7 +18,8 @@ const SignIn = props => {
   }
 
   const handleFormSubmit = (e) => {
-
+    e.preventDefault();
+    console.log('signin', username, password);
   }
 
   const handleOauth = () => {
