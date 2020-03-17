@@ -47,7 +47,7 @@ function App(props) {
       <JobForm handleSubmit={_addJob}/>
       <Login/>
       <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>
-      <Dashboard addJob={_addJob} jobs={props.jobs.jobList}/>
+      <Dashboard addJob={_addJob} jobs={props.jobs.jobList} handleDetails={_toggleDetails} />
       <When condition={props.jobs.showDetails}>
         <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
       </When>
