@@ -1,14 +1,16 @@
 import React from "react";
-// import "./header.scss";
+// import "./footer.scss";
 
-class Header extends React.Component {
+class Footer extends React.Component {
   render() {
     return (
-      <header>
-        <h1 id="header">Can-U</h1>
-      </header>
+      <footer>
+        <section>
+          <p>&copy; Can-U 2020</p>
+        </section>
+      </footer>
     );
   }
 }
 
-export default Header;
+export default Footer;
