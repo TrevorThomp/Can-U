@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import JobForm from './components/form/form'
 import * as actions from './store/action'
 import { connect } from "react-redux";
@@ -30,12 +30,16 @@ function App(props) {
   const _getJobs = () => {
     props.handleGetJobs();
   };
+
+  useEffect(()=> {
+    _getJobs();
+  })
   return (
     <div className="App">   
       <button onClick={_getJobs}>GET JOB RESULTS TEST</button>
       <JobForm handleSubmit={_addJob}/>
       <Login/>
-      <JobList/>
+      <JobList jobs={props.jobs.jobList}/>
     </div>    
   );
 }

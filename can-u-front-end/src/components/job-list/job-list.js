@@ -1,18 +1,9 @@
 import React from 'react';
 
 function jobList(props){
-  const jobs = [
-    {
-      name: 'david',
-      currentBid: 200,
-      createdBy: 'david'
-    },
-    {
-      name: 'david',
-      currentBid: 200,
-      createdBy: 'david'
-    }
-  ];
+  
+  const jobs = props.jobs;
+  console.log(jobs[0]);
   const listJobs = jobs.map(job => 
     <tr>
       <td>{job.name}</td>
@@ -23,12 +14,16 @@ function jobList(props){
   );
   return (
     <table>
-      <th>Name</th>
-      <th>Bid</th>
-      <th>Owner</th>
-      {listJobs}
+      <tbody>
+        <tr>
+          <td>Name</td>
+          <td>Bid</td>
+          <td>Owner</td>
+        </tr>
+        {listJobs}
+      </tbody>
     </table>
-  )
+  );
 }
 
 
