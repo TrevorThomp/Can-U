@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Else, If, Then } from '../conditionals/conditionals';
 import SignIn from '../signIn/signIn';
 import SignUp from '../signUp/signUp';
 
 const Login = props => {
+  const [loginType, setLoginType] = useState('signin');
+
+  const switchLogin = (type) => {
+    setLoginType(type);
+  }
 
   return (
     <div>
-      <If condition={props.signUp === true}>
+      <If condition={loginType === 'signup'}>
         <Then>
-          <SignUp />
+          <SignUp switchLogin={switchLogin} />
         </Then>
         <Else>
-          <SignIn />
+          <SignIn switchLogin={switchLogin} />
         </Else>
       </If>
     </div>

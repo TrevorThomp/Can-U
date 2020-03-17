@@ -30,6 +30,10 @@ const SignUp = props => {
 
   }
 
+  const handleLoginSwitch = () => {
+    props.switchLogin('signin')
+  }
+
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
@@ -56,6 +60,7 @@ const SignUp = props => {
         </label>
         <input type="submit" value="Log In" />
       </form>
+      <p onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Already a member?.. click to login</p>
       <button onSubmit={handleOauth} >Signup with Google</button>
       <button onSubmit={handleOauth} >Signup with GitHub</button>
     </div>
