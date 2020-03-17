@@ -23,9 +23,9 @@ function App(props) {
   //   props.handleToggle(id);
   // };
 
-  // const _toggleDetails = id => {
-  //   props.handleDetails(id);
-  // };
+  const _toggleDetails = id => {
+    props.handleDetails(id);
+  };
 
   const _getJobs = () => {
     props.handleGetJobs();
@@ -39,7 +39,7 @@ function App(props) {
       <button onClick={_getJobs}>GET JOB RESULTS TEST</button>
       <JobForm handleSubmit={_addJob}/>
       <Login/>
-      <JobList jobs={props.jobs.jobList}/>
+      <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails}/>
     </div>    
   );
 }
