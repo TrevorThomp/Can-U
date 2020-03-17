@@ -7,6 +7,7 @@ import './App.css';
 import Login from './components/login/login';
 import JobList from './components/job-list/job-list';
 import JobItem from './components/job-list/job-item';
+import Dashboard from './components/dashboard/dashboard';
 
 
 
@@ -46,7 +47,7 @@ function App(props) {
       <JobForm handleSubmit={_addJob}/>
       <Login/>
       <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>
-
+      <Dashboard addJob={_addJob} jobs={props.jobs.jobList}/>
       <When condition={props.jobs.showDetails}>
         <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
       </When>

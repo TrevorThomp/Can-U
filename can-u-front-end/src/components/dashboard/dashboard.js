@@ -5,8 +5,10 @@ import MyJobs from '../my-jobs/myJobs';
 const DashBoard = props => {
   return (
     <>
-      <Form />
-      <MyJobs />
+      <Form handleSubmit={props.addJob}/>
+      <MyJobs jobs={props.jobs}/>
     </>
   )
 }
+
+export default DashBoard;
