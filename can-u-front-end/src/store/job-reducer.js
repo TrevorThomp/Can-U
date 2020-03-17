@@ -12,7 +12,7 @@ export default (state = initialState, action) => {
 
   switch (type) {
     case "DETAILS":
-      let item = state.todoList.filter(item => item._id === payload)[0] || {};
+      let item = state.jobList.filter(item => item._id === payload)[0] || {};
       return { ...state, showDetails: !state.showDetails, details: item };
 
     case "GET":
