@@ -27,7 +27,15 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
     },
     body: undefined,
   })
-    .then(response => response.text())
+  .then(response => response.text())
+  .then(data => {
+    if(data === '{"error":"Invalid User ID/Password"}'){
+      return {loggedIn: false, data: null};
+    } 
+    else {
+      return {loggedIn: true, data: data};
+    }
+  })
     .catch(e =>
       typeof errorHandler === "function" ? errorHandler(e) : console.error(e)
     );
