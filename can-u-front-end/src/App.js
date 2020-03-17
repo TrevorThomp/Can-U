@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import JobForm from './components/form'
+import JobForm from './components/form/form'
 import * as actions from './store/action'
 import { connect } from "react-redux";
 import './App.css';

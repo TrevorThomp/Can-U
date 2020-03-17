@@ -1,8 +1,5 @@
 const initialState = {
-  jobList: [
-    {
-    }
-  ],
+  jobList: [{}],
   showDetails: null,
   details: {}
 };
@@ -20,7 +17,7 @@ export default (state = initialState, action) => {
       return { ...state, jobList: payload };
 
     case "POST":
-      return { ...state, jobList: [...state.todoList, payload] };
+      return { ...state, jobList: [...state.jobList, payload] };
 
     case "TOGGLE":
       return {
