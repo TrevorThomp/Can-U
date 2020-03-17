@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { connect } from 'react-redux';
+import * as actions from '../../store/action';
 
 const SignUp = props => {
   const [username, setUsername] = useState('');
@@ -24,6 +25,12 @@ const SignUp = props => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log('signup', username, email, password);
+    const body = {
+      username: username,
+      password: password,
+      email: email,
+    }
+    props.handleSignup(body);
   }
 
   const handleOauth = () => {
@@ -67,4 +74,14 @@ const SignUp = props => {
   )
 }
 
-export default SignUp;
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = (dispatch, getState) => ({
+  handleSignUp: data => dispatch(actions.signUp(data)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignUp);

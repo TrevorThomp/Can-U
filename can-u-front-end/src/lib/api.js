@@ -17,7 +17,7 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
 
 const callAPIBasic = (url, auth, handler, errorHandler) => {
 
-  return fetch(`${url}/signin`, {
+  return fetch(url, {
     method: "POST",
     mode: "cors",
     headers: {

@@ -61,13 +61,26 @@ export const destroy = payload => {
 };
 
 export const signIn = payload => dispatch => {
-  return callAPIBasic(`${todoAPI}/signin`, "POST", payload)
+  console.log(todoAPI);
+  return callAPIBasic(`${todoAPI}/signin`, payload)
     .then(results => dispatch(login(results)));
 }
 
 export const login = payload => {
+  console.log(payload);
   return {
     type: "LOGIN",
+    payload: payload
+  };
+};
+
+export const signUpFetch = (payload) => dispatch => {
+  return callAPI(`${todoAPI}/signup`, 'POST', payload).then(result => dispatch(signUp(result)));
+};
+
+export const signUp = payload => {
+  return {
+    type: "SIGN_UP",
     payload: payload
   };
 };

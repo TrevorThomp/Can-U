@@ -17,6 +17,11 @@ export default (state = initialState, action) => {
         token: payload.data,
         loggedIn: payload.loggedIn,
       }
+    case "SIGN_UP":
+      return {
+        token: payload,
+        loggedIn: true,
+      }
     default:
       return state;
   }
