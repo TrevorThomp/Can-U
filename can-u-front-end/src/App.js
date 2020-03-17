@@ -1,6 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import JobForm from './components/form'
+import JobForm from './components/form/form'
 import * as actions from './store/action'
 import { connect } from "react-redux";
 import './App.css';
@@ -11,6 +10,7 @@ import JobList from './components/job-list/job-list';
 function App(props) {
 
   const _addJob = data => {
+    console.log(data)
     data.complete = false;
     props.handlePost(data);
   };
