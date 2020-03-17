@@ -1,11 +1,12 @@
 import React from 'react';
 import { Else, If, Then } from '../conditionals/conditionals';
-
+import SignIn from '../signIn/signIn';
+import SignUp from '../signUp/signUp';
 
 const Login = props => {
 
   return (
-    <View>
+    <div>
       <If condition={props.signUp === true}>
         <Then>
           <SignUp />
@@ -14,7 +15,7 @@ const Login = props => {
           <SignIn />
         </Else>
       </If>
-    </View>
+    </div>
   )
 }
 
