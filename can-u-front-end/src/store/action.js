@@ -50,7 +50,7 @@ export const post = payload => {
 export const destroyData = payload => dispatch => {
   return callAPI(`${todoAPI}/${payload.id}`, "DELETE")
     .then(() => dispatch(destroy(payload.id)))
-    .catch(console.error);
+    .catch(err => console.log(err));
 };
 
 export const destroy = payload => {

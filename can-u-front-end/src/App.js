@@ -7,6 +7,8 @@ import Login from './components/login/login';
 import JobList from './components/job-list/job-list';
 
 
+
+
 function App(props) {
 
   const _addJob = data => {
@@ -15,9 +17,9 @@ function App(props) {
     props.handlePost(data);
   };
 
-  // const _deleteItem = id => {
-  //   props.handleDelete(id);
-  // };
+  const _deleteItem = id => {
+    props.handleDelete(id);
+  };
 
   // const _toggleComplete = id => {
   //   props.handleToggle(id);
@@ -35,12 +37,16 @@ function App(props) {
     _getJobs();
   })
   return (
+    <>
     <div className="App">   
+      
       <button onClick={_getJobs}>GET JOB RESULTS TEST</button>
       <JobForm handleSubmit={_addJob}/>
       <Login/>
-      <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails}/>
-    </div>    
+      <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>
+    </div>  
+   
+    </>  
   );
 }
 

@@ -3,13 +3,15 @@ import React from 'react';
 function jobList(props){
   
   const jobs = props.jobs;
-  console.log(jobs[0]);
+  
   const listJobs = jobs.map(job => 
     <tr key={job._id}>
       <td>{job.name}</td>
       <td>{job.price}</td>
       <td>{job.postedBy}</td>
+      <td>{job._id}</td>
       <td><button onClick={() => props.handleDetails(job._id)}>Details</button></td>
+      <td><button onClick={() => props.handleDelete(job._id)}>Delete</button></td>
     </tr>
   );
   return (

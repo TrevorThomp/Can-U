@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
       return { ...state, showDetails: !state.showDetails, details: item };
 
     case "GET":
-      console.log(payload)
+      
       return { ...state, jobList: payload };
 
     case "POST":
