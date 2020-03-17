@@ -11,6 +11,7 @@ import JobList from './components/job-list/job-list';
 function App(props) {
 
   const _addJob = data => {
+    console.log(data)
     data.complete = false;
     props.handlePost(data);
   };
