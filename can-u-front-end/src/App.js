@@ -4,6 +4,9 @@ import JobForm from './components/form'
 import * as actions from './store/action'
 import { connect } from "react-redux";
 import './App.css';
+import Login from './components/login/login';
+import JobList from './components/job-list/job-list';
+
 
 function App(props) {
 
@@ -28,24 +31,12 @@ function App(props) {
     props.handleGetJobs();
   };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">   
       <button onClick={_getJobs}>GET JOB RESULTS TEST</button>
       <JobForm handleSubmit={_addJob}/>
-    </div>
+      <Login/>
+      <JobList/>
+    </div>    
   );
 }
 
