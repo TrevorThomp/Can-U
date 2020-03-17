@@ -35,7 +35,7 @@ export const details = payload => {
 };
 
 export const postData = payload => dispatch => {
-  return callAPI(`${todoAPI}/jobs`, "POST", payload)
+  return callAPI(`${todoAPI}/jobs`, "POST", payload, payload.token)
     .then(result => dispatch(post(result)))
     .catch(console.error);
 };

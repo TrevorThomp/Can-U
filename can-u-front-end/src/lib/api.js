@@ -15,6 +15,7 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
     );
 };
 
+
 const callAPIBasic = (url, auth, handler, errorHandler) => {
 
   return fetch(url, {
@@ -56,4 +57,3 @@ const callAPISignUp = (url, body, errorHandler) => {
 };
 
 export { callAPI, callAPIBasic, callAPISignUp };
-
