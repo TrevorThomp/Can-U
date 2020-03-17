@@ -1,34 +1,31 @@
 import React from 'react';
 
 function jobList(props){
-  const jobs = [
-    {
-      name: 'david',
-      currentBid: 200,
-      createdBy: 'david'
-    },
-    {
-      name: 'david',
-      currentBid: 200,
-      createdBy: 'david'
-    }
-  ];
+  
+  const jobs = props.jobs;
+  
   const listJobs = jobs.map(job => 
-    <tr>
+    <tr key={job._id}>
       <td>{job.name}</td>
-      <td>{job.currentBid}</td>
-      <td>{job.createdBy}</td>
-      <td><button>Details</button></td>
+      <td>{job.price}</td>
+      <td>{job.postedBy}</td>
+      <td>{job._id}</td>
+      <td><button onClick={() => props.handleDetails(job._id)}>Details</button></td>
+      <td><button onClick={() => props.handleDelete(job._id)}>Delete</button></td>
     </tr>
   );
   return (
     <table>
-      <th>Name</th>
-      <th>Bid</th>
-      <th>Owner</th>
-      {listJobs}
+      <tbody>
+        <tr key="headings">
+          <td>Name</td>
+          <td>Bid</td>
+          <td>Owner</td>
+        </tr>
+        {listJobs}
+      </tbody>
     </table>
-  )
+  );
 }
 
 

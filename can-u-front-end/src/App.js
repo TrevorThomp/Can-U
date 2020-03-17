@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import JobForm from './components/form/form'
 import * as actions from './store/action'
 import { connect } from "react-redux";
 import './App.css';
 import Login from './components/login/login';
 import JobList from './components/job-list/job-list';
+
+
 
 
 function App(props) {
@@ -15,28 +17,36 @@ function App(props) {
     props.handlePost(data);
   };
 
-  // const _deleteItem = id => {
-  //   props.handleDelete(id);
-  // };
+  const _deleteItem = id => {
+    props.handleDelete(id);
+  };
 
   // const _toggleComplete = id => {
   //   props.handleToggle(id);
   // };
 
-  // const _toggleDetails = id => {
-  //   props.handleDetails(id);
-  // };
+  const _toggleDetails = id => {
+    props.handleDetails(id);
+  };
 
   const _getJobs = () => {
     props.handleGetJobs();
   };
+
+  useEffect(()=> {
+    _getJobs();
+  })
   return (
+    <>
     <div className="App">   
+      
       <button onClick={_getJobs}>GET JOB RESULTS TEST</button>
       <JobForm handleSubmit={_addJob}/>
       <Login/>
-      <JobList/>
-    </div>    
+      <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>
+    </div>  
+   
+    </>  
   );
 }
 
