@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { connect } from 'react-redux';
 
 const SignIn = props => {
   const [username, setUsername] = useState('');
@@ -52,4 +52,14 @@ const SignIn = props => {
   )
 }
 
-export default SignIn;
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = (dispatch, getState) => ({
+  handleSignIn: () => dispatch(),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignIn);
