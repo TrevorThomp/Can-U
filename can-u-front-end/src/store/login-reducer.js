@@ -5,7 +5,8 @@ const token = cookieToken || null;
 
 const initialState = {
   token: token,
-  loggedIn: !!token
+  loggedIn: !!token,
+  signupStatus: null
 };
 
 export default (state = initialState, action) => {
@@ -17,11 +18,15 @@ export default (state = initialState, action) => {
         token: payload.data,
         loggedIn: payload.loggedIn,
       }
-    case "SIGN_UP":
+    case "SIGN_UP_SUCCESS":
       return {
         token: payload,
         loggedIn: true,
       }
+      case "SIGN_UP_FAIL":
+        return {
+          signupStatus: payload,
+        }
     default:
       return state;
   }

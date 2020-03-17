@@ -1,3 +1,5 @@
+
+
 const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
   return fetch(url, {
     method: method,
@@ -49,7 +51,13 @@ const callAPISignUp = (url, body, errorHandler) => {
     headers: { "Content-Type": "application/json" },
     body: body ? JSON.stringify(body) : undefined
   })
-    .then(response => response.text())
+    .then(response => {
+      if(response.status === 500){
+        return 'username taken';
+      }else {
+        return response.text()
+      }
+    })
     .catch(e =>
       typeof errorHandler === "function" ? errorHandler(e) : console.error(e)
     );
