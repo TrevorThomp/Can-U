@@ -3,7 +3,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { reducer as formReducer } from "redux-form";
 import thunk from "redux-thunk";
 
-import jobsReducer from "./reducer";
+import jobsReducer from "./job-reducer";
 
 let reducers = combineReducers({
   jobs: jobsReducer,

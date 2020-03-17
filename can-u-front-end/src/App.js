@@ -1,11 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
 import JobForm from './components/form'
+import * as actions from './store/action'
+import { connect } from "react-redux";
 import './App.css';
 
 function App(props) {
 
-  const _addItem = data => {
+  const _addJob = data => {
     data.complete = false;
     props.handlePost(data);
   };
@@ -22,7 +24,7 @@ function App(props) {
   //   props.handleDetails(id);
   // };
 
-  const _toggleDB = () => {
+  const _getJobs = () => {
     props.handleGetJobs();
   };
   return (
@@ -41,7 +43,8 @@ function App(props) {
           Learn React
         </a>
       </header>
-      <JobForm />
+      <button onClick={_getJobs}>GET JOB RESULTS TEST</button>
+      <JobForm handleSubmit={_addJob}/>
     </div>
   );
 }
