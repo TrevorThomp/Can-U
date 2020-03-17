@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from '../modal/modal';
 
 const JobItem = props => {
-  const job = props.job || {};
+  const job = props.item || {};
 
   return (
     <Modal title="Job" close={props.handleDetails}>
