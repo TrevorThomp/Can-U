@@ -5,7 +5,7 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
     cache: "no-cache",
     headers: { 
       "Content-Type": "application/json",
-       "Authorization": "Bearer " + token},
+      "Authorization": "Bearer " + token},
     body: body ? JSON.stringify(body) : undefined
   })
     .then(response => response.json())
@@ -15,5 +15,45 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
     );
 };
 
-export { callAPI };
-  
+
+const callAPIBasic = (url, auth, handler, errorHandler) => {
+
+  return fetch(url, {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      "Authorization": `Basic ${auth}`,
+    },
+    body: undefined,
+  })
+  .then(response => response.text())
+  .then(data => {
+    if(data === '{"error":"Invalid User ID/Password"}'){
+      return {loggedIn: false, data: null};
+    } 
+    else {
+      return {loggedIn: true, data: data};
+    }
+  })
+    .catch(e =>
+      typeof errorHandler === "function" ? errorHandler(e) : console.error(e)
+    );
+};
+
+const callAPISignUp = (url, body, errorHandler) => {
+  return fetch(url, {
+    method: 'POST',
+    mode: "cors",
+    cache: "no-cache",
+    headers: { "Content-Type": "application/json" },
+    body: body ? JSON.stringify(body) : undefined
+  })
+    .then(response => response.text())
+    .catch(e =>
+      typeof errorHandler === "function" ? errorHandler(e) : console.error(e)
+    );
+};
+
+export { callAPI, callAPIBasic, callAPISignUp };

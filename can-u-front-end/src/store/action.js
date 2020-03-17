@@ -1,4 +1,4 @@
-import { callAPI } from "../lib/api";
+import { callAPI, callAPIBasic, callAPISignUp } from "../lib/api";
 
 let todoAPI = "https://dry-shore-68165.herokuapp.com";
 
@@ -59,3 +59,30 @@ export const destroy = payload => {
     payload: payload
   };
 };
+
+export const signInFetch = payload => dispatch => {
+  console.log(todoAPI);
+  return callAPIBasic(`${todoAPI}/signin`, payload)
+    .then(results => dispatch(signIn(results)));
+}
+
+export const signIn = payload => {
+  console.log('login', payload);
+  return {
+    type: "LOGIN",
+    payload: payload
+  };
+};
+
+export const signUpFetch = (payload) => dispatch => {
+  return callAPISignUp(`${todoAPI}/signup`, payload).then(result => dispatch(signUp(result)));
+};
+
+export const signUp = payload => {
+  console.log('sign up', payload);
+  return {
+    type: "SIGN_UP",
+    payload: payload
+  };
+};
+

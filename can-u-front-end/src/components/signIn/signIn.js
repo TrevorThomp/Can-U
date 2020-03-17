@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-
+import { connect } from 'react-redux';
+import * as actions from '../../store/action';
 
 const SignIn = props => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleInputChange = (e) => {
-    console.log(e.target.name);
     switch(e.target.name){
       case 'username':
         setUsername(e.target.value);
@@ -20,6 +20,9 @@ const SignIn = props => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log('signin', username, password);
+    const encodedStr = btoa(`${username}:${password}`);
+    console.log('encoded', encodedStr);
+    props.handleSignIn(encodedStr);
   }
 
   const handleOauth = () => {
@@ -52,4 +55,14 @@ const SignIn = props => {
   )
 }
 
-export default SignIn;
+const mapStateToProps = state => ({
+});
+
+const mapDispatchToProps = (dispatch, getState) => ({
+  handleSignIn: data => dispatch(actions.signInFetch(data)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SignIn);
