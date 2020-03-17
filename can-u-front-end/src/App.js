@@ -2,9 +2,11 @@ import React, {useEffect} from 'react';
 import JobForm from './components/form/form'
 import * as actions from './store/action'
 import { connect } from "react-redux";
+import {When} from './components/conditionals/conditionals';
 import './App.css';
 import Login from './components/login/login';
 import JobList from './components/job-list/job-list';
+import JobItem from './components/job-list/job-item';
 
 
 
@@ -44,6 +46,10 @@ function App(props) {
       <JobForm handleSubmit={_addJob}/>
       <Login/>
       <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>
+
+      <When condition={props.jobs.showDetails}>
+        <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
+      </When>
     </div>  
    
     </>  
