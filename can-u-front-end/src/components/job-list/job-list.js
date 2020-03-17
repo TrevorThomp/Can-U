@@ -18,6 +18,7 @@ function jobList(props){
       <td>{job.name}</td>
       <td>{job.currentBid}</td>
       <td>{job.createdBy}</td>
+      <td><button>Details</button></td>
     </tr>
   );
   return (
