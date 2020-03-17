@@ -4,7 +4,6 @@ import { Field, reduxForm } from "redux-form";
 
 const TodoForm = props => {
   
-  console.log(props)
 
   return (
     <>
@@ -25,10 +24,6 @@ const TodoForm = props => {
             component="input"
             placeholder="Price"
           />
-        </label>
-        <label>
-          <span>Due</span>
-          <Field component="input" type="date" name="due" />
         </label>
         <button>Add Job</button>
       </form>
