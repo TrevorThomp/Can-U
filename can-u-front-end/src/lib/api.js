@@ -5,7 +5,7 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
     cache: "no-cache",
     headers: { 
       "Content-Type": "application/json",
-       "Authorization": "Bearer " + token},
+      "Authorization": "Bearer " + token},
     body: body ? JSON.stringify(body) : undefined
   })
     .then(response => response.json())
@@ -15,4 +15,23 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
     );
 };
 
-export { callAPI };
+const callAPIBasic = (url, auth, handler, errorHandler) => {
+
+  return fetch(`${url}/signin`, {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      "Authorization": `Basic ${auth}`,
+    },
+    body: undefined,
+  })
+    .then(response => response.text())
+    .catch(e =>
+      typeof errorHandler === "function" ? errorHandler(e) : console.error(e)
+    );
+};
+
+export { callAPI, callAPIBasic };
+
