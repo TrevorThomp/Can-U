@@ -48,7 +48,7 @@ export const post = payload => {
 };
 
 export const destroyData = payload => dispatch => {
-  return callAPI(`${todoAPI}/${payload.id}`, "DELETE")
+  return callAPI(`${todoAPI}/jobs/${payload._id}`, "DELETE", '', payload.token)
     .then(() => dispatch(destroy(payload.id)))
     .catch(err => console.log(err));
 };

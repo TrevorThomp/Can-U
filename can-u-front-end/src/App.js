@@ -9,6 +9,9 @@ import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import cookie from 'react-cookies'
 import Nav from './components/nav/nav';
+import Login from './components/login/login'
+import JobList from './components/job-list/job-list'
+import JobItem from './components/job-list/job-item'
 
 
 
@@ -25,8 +28,10 @@ function App(props) {
     props.handlePost(data);
   };
 
-  const _deleteItem = id => {
-    props.handleDelete(id);
+  const _deleteItem = data => {
+    const authCookie = cookie.load('auth')
+    data.token = authCookie;
+    props.handleDelete(data);
   };
 
   // const _toggleComplete = id => {
@@ -41,8 +46,10 @@ function App(props) {
     props.handleGetJobs();
   };
 
-  const _getUsers =() => {
-    props.handleGetUsers();
+  const _getUsers = data => {
+    const authCookie = cookie.load('auth')
+    data.token = authCookie;
+    props.handleGetUsers(data);
   }
 
   useEffect(()=> {
@@ -57,6 +64,7 @@ function App(props) {
         
         <Login />
 
+        <button onClick={_getUsers}>GET USERS TEST</button>
         <When condition={screen === 'main'}>
           <JobList
             jobs={props.jobs.jobList}
@@ -70,6 +78,7 @@ function App(props) {
             addJob={_addJob}
             jobs={props.jobs.jobList}
             handleDetails={_toggleDetails}
+            handleDelete={_deleteItem}
           />
         </When>
         <When condition={props.jobs.showDetails}>
@@ -90,9 +99,9 @@ const mapDispatchToProps = (dispatch, getState) => ({
   handleDetails: id => dispatch(actions.details(id)),
   handlePost: data => dispatch(actions.postData(data)),
   handleToggle: id => dispatch(actions.toggle(id)),
-  handleDelete: id => dispatch(actions.destroy(id)),
+  handleDelete: data => dispatch(actions.destroyData(data)),
 
-  handleGetUsers: () => dispatch(actions._getUsers())
+  handleGetUsers: data => dispatch(actions._getUsers(data))
 });
 
 export default connect(

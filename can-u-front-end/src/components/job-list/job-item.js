@@ -11,7 +11,7 @@ const JobItem = props => {
           <span>Name: {job.name}</span>
           <span>Description: {job.description}</span>
           <span>Price: {job.price}</span>
-          <span>Posted by: {job.postedBy}</span>
+          <span>Posted by: {job.postedUser}</span>
         
       </div>
     </Modal>

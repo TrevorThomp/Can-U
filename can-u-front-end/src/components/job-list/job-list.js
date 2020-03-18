@@ -11,7 +11,7 @@ function jobList(props){
       <td>{job.price}</td>
       <td>{job.postedUser}</td>      
       <td><button onClick={() => props.handleDetails(job._id)}>Details</button></td>
-      
+      <td><button onClick={() => props.handleDelete(job._id)}>DELETE</button></td>
     </tr>
   );
   return (
