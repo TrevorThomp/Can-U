@@ -41,9 +41,7 @@ function App(props) {
   })
   return (
     <>
-    <div className="App">   
-      
-      <button onClick={_getJobs}>GET JOB RESULTS TEST</button>
+    <div className="App">    
       <JobForm handleSubmit={_addJob}/>
       <Login/>
       <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>

@@ -9,7 +9,7 @@ function jobList(props){
     <tr key={job._id}>
       <td>{job.name}</td>
       <td>{job.price}</td>
-      <td>{job.postedBy}</td>      
+      <td>{job.postedUser}</td>      
       <td><button onClick={() => props.handleDetails(job._id)}>Details</button></td>
       
     </tr>
