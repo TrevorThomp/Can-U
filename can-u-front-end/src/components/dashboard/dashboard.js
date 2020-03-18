@@ -6,7 +6,7 @@ const DashBoard = props => {
   return (
     <>
       <Form handleSubmit={props.addJob}/>
-      <MyJobs jobs={props.jobs} handleDetails={props.handleDetails}/>
+      <MyJobs jobs={props.jobs} handleDetails={props.handleDetails} handleDelete={props.handleDelete}/>
     </>
   )
 }

@@ -8,7 +8,7 @@ const MyJobs = props => {
       <td>{job.name}</td>
       <td>{job.price}</td>
       <td>{job.postedUser}</td>
-      <td><button onClick={() => props.handleDelete(job._id)}>Delete</button></td>
+      <td><button onClick={() => props.handleDelete(job)}>Delete</button></td>
       <td>
         <button onClick={() => props.handleDetails(job._id)}>Details</button>
       </td>
