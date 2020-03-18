@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
 
 function jobList(props){
   
@@ -27,6 +27,7 @@ function jobList(props){
     </table>
   );
 }
+
 
 
 export default jobList;

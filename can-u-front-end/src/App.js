@@ -1,19 +1,22 @@
-import React, {useEffect} from 'react';
+
+import React, {useEffect, useState} from 'react';
 import JobForm from './components/form/form'
 import * as actions from './store/action'
 import { connect } from "react-redux";
-import {When} from './components/conditionals/conditionals';
 import './App.css';
-import Login from './components/login/login';
-import JobList from './components/job-list/job-list';
-import JobItem from './components/job-list/job-item';
+import Auth from './components/auth/auth';
+import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import cookie from 'react-cookies'
+import Nav from './components/nav/nav';
 
 
 
 
 function App(props) {
+
+  const [screen, setScreen] = useState('dashboard')
+ 
 
   const _addJob = data => {
     const authCookie = cookie.load('auth')
@@ -45,25 +48,41 @@ function App(props) {
   useEffect(()=> {
     _getJobs();
   })
+
   return (
     <>
-    <div className="App">   
-    <button onClick={_getUsers}>GET USERS TEST BUTTON</button> 
-      <JobForm handleSubmit={_addJob}/>
-      <Login/>
-      <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>
-      <Dashboard addJob={_addJob} jobs={props.jobs.jobList} handleDetails={_toggleDetails} />
-      <When condition={props.jobs.showDetails}>
-        <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
-      </When>
-    </div>  
-   
-    </>  
+      <div className="App">
+        <Nav setScreen={setScreen} />
+        
+        
+        <Login />
+
+        <When condition={screen === 'main'}>
+          <JobList
+            jobs={props.jobs.jobList}
+            handleDetails={_toggleDetails}
+            handleDelete={_deleteItem}
+          />
+        </When>
+
+        <When condition={screen === 'dashboard'}>
+          <Dashboard
+            addJob={_addJob}
+            jobs={props.jobs.jobList}
+            handleDetails={_toggleDetails}
+          />
+        </When>
+        <When condition={props.jobs.showDetails}>
+          <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
+        </When>
+      </div>
+    </>
   );
 }
 
 const mapStateToProps = state => ({
-  jobs: state.jobs
+  jobs: state.jobs,
+  login: state.login
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
