@@ -3,13 +3,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { reducer as formReducer } from "redux-form";
 import thunk from "redux-thunk";
 import jobsReducer from "./job-reducer";
-import loginReducer from './login-reducer';
-
+import authReducer from './login-reducer';
 
 let reducers = combineReducers({
   jobs: jobsReducer,
   form: formReducer,
-  login: loginReducer,
+  auth: authReducer
 });
 
 const store = () =>
