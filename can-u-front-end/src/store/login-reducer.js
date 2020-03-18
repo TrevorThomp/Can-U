@@ -1,3 +1,4 @@
+import jwt from 'jsonwebtoken';
 import cookie from "react-cookies";
 
 const cookieToken = cookie.load("auth");
@@ -6,7 +7,8 @@ const token = cookieToken || null;
 const initialState = {
   token: token,
   loggedIn: !!token,
-  signupStatus: null
+  signupStatus: null,
+  user: {}
 };
 
 export default (state = initialState, action) => {
@@ -17,11 +19,13 @@ export default (state = initialState, action) => {
       return {
         token: payload.data,
         loggedIn: payload.loggedIn,
+        user: jwt.verify(payload.data, `sauce`)
       }
     case "SIGN_UP_SUCCESS":
       return {
         token: payload,
         loggedIn: true,
+        user: jwt.verify(payload, `sauce`)
       }
       case "SIGN_UP_FAIL":
         return {

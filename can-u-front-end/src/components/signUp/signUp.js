@@ -40,7 +40,6 @@ const SignUp = props => {
   const handleLoginSwitch = () => {
     props.switchLogin('signin')
   }
-
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
