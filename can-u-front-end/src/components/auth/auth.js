@@ -1,6 +1,6 @@
 import React from 'react';
 import jwt from 'jsonwebtoken';
-import { LoginContext } from './context.js';
+import {connect} from 'react-redux';
 
 const If = props => {
   return !!props.condition ? props.children : null;
@@ -19,7 +19,7 @@ class Auth extends React.Component {
         : {};
 
       okToRender =
-        this.context.loggedIn &&
+        props.auth.loggedIn &&
         (this.props.capability
           ? user.capabilities.includes(this.props.capability)
           : true);
@@ -33,4 +33,8 @@ class Auth extends React.Component {
   }
 }
 
-export default Auth;
+const mapStateToProps = state => {
+  auth: state.auth
+}
+
+export default connect(Auth, mapStateToProps);
