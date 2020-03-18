@@ -1,17 +1,15 @@
 
-import React, {useEffect, useState} from 'react';
-import JobForm from './components/form/form'
-import * as actions from './store/action'
+import React, { useEffect, useState } from 'react';
+import cookie from 'react-cookies';
 import { connect } from "react-redux";
 import './App.css';
-import Auth from './components/auth/auth';
-import { Else, If, Then, When } from './components/conditionals/conditionals';
+import { When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
-import cookie from 'react-cookies'
+import JobItem from './components/job-list/job-item';
+import JobList from './components/job-list/job-list';
+import Login from './components/login/login';
 import Nav from './components/nav/nav';
-import Login from './components/login/login'
-import JobList from './components/job-list/job-list'
-import JobItem from './components/job-list/job-item'
+import * as actions from './store/action';
 
 
 
@@ -52,8 +50,17 @@ function App(props) {
     props.handleGetUsers(data);
   }
 
+  const placeBid = () => {
+    console.log(props.jobs.jobList[0]._id)
+    const authCookie = cookie.load('auth');
+    let id = props.jobs.jobList[0]._id;
+    let body = {price: 10};
+    props.handlePlaceBid({id: id, body: body, token: authCookie})
+  }
+
   useEffect(()=> {
     _getJobs();
+    console.log()
   })
 
   return (
@@ -65,6 +72,8 @@ function App(props) {
         <Login />
 
         <button onClick={_getUsers}>GET USERS TEST</button>
+        <button onClick={placeBid}>PLACE BID TEST</button>
+
         <When condition={screen === 'main'}>
           <JobList
             jobs={props.jobs.jobList}
@@ -100,7 +109,7 @@ const mapDispatchToProps = (dispatch, getState) => ({
   handlePost: data => dispatch(actions.postData(data)),
   handleToggle: id => dispatch(actions.toggle(id)),
   handleDelete: data => dispatch(actions.destroyData(data)),
-
+  handlePlaceBid: data => dispatch(actions.placeBid(data)),
   handleGetUsers: data => dispatch(actions._getUsers(data))
 });
 

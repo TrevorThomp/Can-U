@@ -2,6 +2,11 @@ import { callAPI, callAPIBasic, callAPISignUp } from "../lib/api";
 
 let todoAPI = "https://dry-shore-68165.herokuapp.com";
 
+export const placeBid = payload => dispatch => {
+  return callAPI(`${todoAPI}/jobs/bid/${payload.id}`, "PUT", payload.body, payload.token)
+    .then(record => console.log(record));
+}
+
 export const _getJobs = () => dispatch => {
   return callAPI(`${todoAPI}/jobs`, "GET")
     .then(items => dispatch(get(items.results)))
@@ -78,8 +83,6 @@ export const signUpFetch = (payload) => dispatch => {
   return callAPISignUp(`${todoAPI}/signup`, payload).then(result => {
     console.log('fetch result', result);
     (result === 'username taken') ? dispatch(signUpFail(result)): dispatch(signUpSuccess(result));
-
-    
   });
 };
 
