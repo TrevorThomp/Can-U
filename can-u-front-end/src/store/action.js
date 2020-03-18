@@ -7,6 +7,11 @@ export const placeBid = payload => dispatch => {
     .then(record => console.log(record));
 }
 
+export const closeJobs = payload => dispatch => {
+  return callAPI(`${todoAPI}/jobs/bid/${payload.id}`, "PUT", payload.token)
+    .then(record => console.log(record));
+}
+
 export const _getJobs = () => dispatch => {
   return callAPI(`${todoAPI}/jobs`, "GET")
     .then(items => dispatch(get(items.results)))
