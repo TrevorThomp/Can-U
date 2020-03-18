@@ -1,8 +1,9 @@
 import React from 'react';
+import './nav.scss';
 
 const Nav = props => {
   return(
-    <div>
+    <div id="nav">
       <ul>
         <li>
           <span onClick={() => props.setScreen('dashboard')}>Dashboard</span>

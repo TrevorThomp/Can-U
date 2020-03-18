@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import cookie from 'react-cookies';
 import { connect } from "react-redux";
-import './App.css';
+import './style/App.css';
 import { When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import JobItem from './components/job-list/job-item';
 import JobList from './components/job-list/job-list';
 import Login from './components/login/login';
 import Nav from './components/nav/nav';
+import Header from './components/header/header'
 import * as actions from './store/action';
 
 
@@ -66,6 +67,7 @@ function App(props) {
   return (
     <>
       <div className="App">
+        <Header />
         <Nav setScreen={setScreen} />
         
         
