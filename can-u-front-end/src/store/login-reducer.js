@@ -22,6 +22,7 @@ export default (state = initialState, action) => {
         token: payload,
         loggedIn: true,
       }
+   
     default:
       return state;
   }
