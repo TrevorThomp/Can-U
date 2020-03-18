@@ -9,6 +9,9 @@ import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import cookie from 'react-cookies'
 import Nav from './components/nav/nav';
+import Login from './components/login/login'
+import JobList from './components/job-list/job-list'
+import JobItem from './components/job-list/job-item'
 
 
 
