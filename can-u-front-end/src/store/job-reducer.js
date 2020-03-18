@@ -25,13 +25,11 @@ export default (state = initialState, action) => {
           item._id === payload ? { ...item, complete: !item.complete } : item
         )
       };
-
     case "DELETE":
       return {
         ...state,
         jobList: state.jobList.filter(item => item._id !== payload)
       };
-
     default:
       return state;
   }
