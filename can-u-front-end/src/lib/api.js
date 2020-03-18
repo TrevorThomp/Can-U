@@ -1,4 +1,4 @@
-
+import cookie from 'react-cookies';
 
 const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
   return fetch(url, {
@@ -35,6 +35,8 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
       return {loggedIn: false, data: null};
     } 
     else {
+      console.log('signin data', data);
+      cookie.save('auth', data);
       return {loggedIn: true, data: data};
     }
   })
@@ -55,7 +57,9 @@ const callAPISignUp = (url, body, errorHandler) => {
       if(response.status === 500){
         return 'username taken';
       }else {
-        return response.text()
+        let token = response.text();
+        cookie.save('auth', token);
+        return token;
       }
     })
     .catch(e =>
