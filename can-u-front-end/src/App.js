@@ -64,6 +64,12 @@ function App(props) {
     props.handlePlaceBid({id: id, body: body, token: authCookie})
   }
 
+  const closeJob = () => {
+    const authCookie = cookie.load('auth');
+    let id = props.jobs.jobList[0]._id;
+    props.handleCloseJob({id: id, token: authCookie})
+  }
+
   useEffect(()=> {
     _getJobs();
     console.log()
@@ -81,6 +87,8 @@ function App(props) {
 
         <button onClick={_getUsers}>GET USERS TEST</button>
         <button onClick={placeBid}>PLACE BID TEST</button>
+        <button onClick={closeJob}>CLOSE JOB TEST</button>
+
 
 
         <When condition={screen === 'main'}>
@@ -122,7 +130,8 @@ const mapDispatchToProps = (dispatch, getState) => ({
   handleToggle: id => dispatch(actions.toggle(id)),
   handleDelete: data => dispatch(actions.destroyData(data)),
   handlePlaceBid: data => dispatch(actions.placeBid(data)),
-  handleGetUsers: data => dispatch(actions._getUsers(data))
+  handleGetUsers: data => dispatch(actions._getUsers(data)),
+  handleCloseJob: () => dispatch(actions.closeJobs())
 });
 
 export default connect(
