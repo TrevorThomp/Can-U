@@ -26,6 +26,14 @@ const TodoForm = props => {
             placeholder="Price"
           />
         </label>
+        <label>
+          <span>Description</span>
+          <Field 
+          name='description'
+          type='textarea'
+          component='input'
+          />
+        </label>
         <button>Add Job</button>
       </form>
     </>

@@ -12,6 +12,7 @@ import Nav from './components/nav/nav';
 import Login from './components/login/login'
 import JobList from './components/job-list/job-list'
 import JobItem from './components/job-list/job-item'
+import Footer from './components/footer/footer';
 
 
 
@@ -60,11 +61,11 @@ function App(props) {
     <>
       <div className="App">
         <Nav setScreen={setScreen} />
-        
-        
-        <Login />
 
-        <button onClick={_getUsers}>GET USERS TEST</button>
+        <When condition={!props.login.loggedIn}>
+          <Login />
+        </When>
+
         <When condition={screen === 'main'}>
           <JobList
             jobs={props.jobs.jobList}
@@ -74,16 +75,19 @@ function App(props) {
         </When>
 
         <When condition={screen === 'dashboard'}>
-          <Dashboard
-            addJob={_addJob}
-            jobs={props.jobs.jobList}
-            handleDetails={_toggleDetails}
-            handleDelete={_deleteItem}
-          />
+          <Auth capability
+            <Dashboard
+              addJob={_addJob}
+              jobs={props.jobs.jobList}
+              handleDetails={_toggleDetails}
+              handleDelete={_deleteItem}
+            />
+          
         </When>
         <When condition={props.jobs.showDetails}>
           <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
         </When>
+        <Footer />
       </div>
     </>
   );
