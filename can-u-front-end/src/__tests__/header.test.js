@@ -15,4 +15,14 @@ describe("<Header /> component", () => {
     const head = shallow(<Header />);
     expect(head.find("h1").exists()).toBeTruthy();
   });
+
+  it("should render the nav", () => {
+    const head = shallow(<Header />);
+    expect(head.find("nav").exists()).toBeTruthy();
+  });
+
+  it("should render the Link", () => {
+    const head = shallow(<Header />);
+    expect(head.find("Link").exists()).toBeTruthy();
+  });
 });
