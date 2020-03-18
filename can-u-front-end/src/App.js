@@ -1,20 +1,22 @@
-import React, { useEffect } from 'react';
-import cookie from 'react-cookies';
+
+import React, {useEffect, useState} from 'react';
+import JobForm from './components/form/form'
+import * as actions from './store/action'
 import { connect } from "react-redux";
 import './App.css';
 import Auth from './components/auth/auth';
 import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
-import JobForm from './components/form/form';
-import JobItem from './components/job-list/job-item';
-import JobList from './components/job-list/job-list';
-import Splash from './components/splash/splash';
-import * as actions from './store/action';
+import cookie from 'react-cookies'
+import Nav from './components/nav/nav';
 
 
 
 
 function App(props) {
+
+  const [screen, setScreen] = useState('dashboard')
+ 
 
   const _addJob = data => {
     const authCookie = cookie.load('auth')
@@ -48,25 +50,33 @@ function App(props) {
   })
 
   return (
-    <div className="App">
-      <If condition={!props.login.loggedIn}>
-        <Then>
-          <Splash />
-        </Then>
-        <Else>
-          <button onClick={_getUsers}>GET USERS TEST BUTTON</button> 
-          <Auth capability='read'>
-            <p>Test for auth</p>
-          </Auth>
-          <JobForm handleSubmit={_addJob}/>
-          <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>
-          <Dashboard addJob={_addJob} jobs={props.jobs.jobList} handleDetails={_toggleDetails} />
-          <When condition={props.jobs.showDetails}>
-            <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
-          </When>
-        </Else>
-      </If>
-    </div>  
+    <>
+      <div className="App">
+        <Nav setScreen={setScreen} />
+        
+        
+        <Login />
+
+        <When condition={screen === 'main'}>
+          <JobList
+            jobs={props.jobs.jobList}
+            handleDetails={_toggleDetails}
+            handleDelete={_deleteItem}
+          />
+        </When>
+
+        <When condition={screen === 'dashboard'}>
+          <Dashboard
+            addJob={_addJob}
+            jobs={props.jobs.jobList}
+            handleDetails={_toggleDetails}
+          />
+        </When>
+        <When condition={props.jobs.showDetails}>
+          <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
+        </When>
+      </div>
+    </>
   );
 }
 
