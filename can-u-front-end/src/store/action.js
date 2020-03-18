@@ -9,7 +9,7 @@ export const _getJobs = () => dispatch => {
 };
 
 export const _getUsers = payload => dispatch => {
-  return callAPI(`${todoAPI}/users`, "GET", '', payload)
+  return callAPI(`${todoAPI}/users`, "GET", '', payload.token)
     .then(items => console.log(items))
 }
 
