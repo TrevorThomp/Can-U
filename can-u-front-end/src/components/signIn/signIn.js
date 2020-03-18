@@ -25,10 +25,6 @@ const SignIn = props => {
     props.handleSignIn(encodedStr);
   }
 
-  const handleOauth = () => {
-
-  }
-
   const handleLoginSwitch = () => {
     props.switchLogin('signup')
   }
@@ -49,8 +45,6 @@ const SignIn = props => {
         <input type="submit" value="Log In" />
       </form>
       <p onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Not a member?.. click to sign up</p>
-      <button onSubmit={handleOauth} >Login with Google</button>
-      <button onSubmit={handleOauth} >Login with GitHub</button>
     </div>
   )
 }
