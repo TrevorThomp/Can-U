@@ -44,8 +44,10 @@ function App(props) {
     props.handleGetJobs();
   };
 
-  const _getUsers =() => {
-    props.handleGetUsers();
+  const _getUsers = data => {
+    const authCookie = cookie.load('auth')
+    data.token = authCookie;
+    props.handleGetUsers(data);
   }
 
   useEffect(()=> {
@@ -60,6 +62,7 @@ function App(props) {
         
         <Login />
 
+        <button onClick={_getUsers}>GET USERS TEST</button>
         <When condition={screen === 'main'}>
           <JobList
             jobs={props.jobs.jobList}
@@ -95,7 +98,7 @@ const mapDispatchToProps = (dispatch, getState) => ({
   handleToggle: id => dispatch(actions.toggle(id)),
   handleDelete: id => dispatch(actions.destroy(id)),
 
-  handleGetUsers: () => dispatch(actions._getUsers())
+  handleGetUsers: data => dispatch(actions._getUsers(data))
 });
 
 export default connect(
