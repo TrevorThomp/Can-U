@@ -1,40 +1,39 @@
-import React from 'react';
 import jwt from 'jsonwebtoken';
-import {connect} from 'react-redux';
+import React from 'react';
+import { connect } from 'react-redux';
+import { If, Then } from '../conditionals/conditionals';
 
-const If = props => {
-  return !!props.condition ? props.children : null;
-};
+const Auth = props => {
 
-class Auth extends React.Component {
-  static contextType = LoginContext;
-
-  render() {
     let okToRender = false;
     let user = {};
 
-    try {
-      user = this.context.token
-        ? jwt.verify(this.context.token, `supersecret`)
+    try {      
+
+      user = props.login.token
+        ? jwt.verify(props.login.token, `sauce`)
         : {};
 
       okToRender =
-        props.auth.loggedIn &&
-        (this.props.capability
-          ? user.capabilities.includes(this.props.capability)
+        props.login.loggedIn &&
+        (props.capability
+          ? user.capabilities.includes(props.capability)
           : true);
-    } catch (e) {}
 
+    } catch (e) {}
     return (
       <If condition={okToRender}>
-        <div>{this.props.children}</div>
+        <Then>
+          <div>{props.children}</div>
+        </Then>
       </If>
     );
-  }
 }
 
-const mapStateToProps = state => {
-  auth: state.auth
-}
+const mapStateToProps = state => ({
+  login: state.login
+});
 
-export default connect(Auth, mapStateToProps);
+export default connect(
+  mapStateToProps,
+)(Auth);
