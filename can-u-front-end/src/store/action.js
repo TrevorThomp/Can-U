@@ -75,13 +75,24 @@ export const signIn = payload => {
 };
 
 export const signUpFetch = (payload) => dispatch => {
-  return callAPISignUp(`${todoAPI}/signup`, payload).then(result => dispatch(signUp(result)));
+  return callAPISignUp(`${todoAPI}/signup`, payload).then(result => {
+    console.log('fetch result', result);
+    (result === 'username taken') ? dispatch(signUpFail(result)): dispatch(signUpSuccess(result));
+
+    
+  });
 };
 
-export const signUp = payload => {
-  console.log('sign up', payload);
+export const signUpSuccess = payload => {
   return {
-    type: "SIGN_UP",
+    type: "SIGN_UP_SUCCESS",
+    payload: payload
+  };
+};
+
+export const signUpFail = payload => {
+  return {
+    type: "SIGN_UP_FAIL",
     payload: payload
   };
 };

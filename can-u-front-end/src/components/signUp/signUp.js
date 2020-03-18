@@ -67,6 +67,7 @@ const SignUp = props => {
         </label>
         <input type="submit" value="Sign Up" />
       </form>
+      <p>{props.login.signupStatus}</p>
       <p onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Already a member?.. click to login</p>
       <button onSubmit={handleOauth} >Signup with Google</button>
       <button onSubmit={handleOauth} >Signup with GitHub</button>
@@ -75,6 +76,7 @@ const SignUp = props => {
 }
 
 const mapStateToProps = state => ({
+  login: state.login
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
