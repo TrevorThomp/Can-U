@@ -23,14 +23,10 @@ export default (state = initialState, action) => {
         token: payload,
         loggedIn: true,
       }
-<<<<<<< HEAD
-   
-=======
       case "SIGN_UP_FAIL":
         return {
           signupStatus: payload,
         }
->>>>>>> c5662014ab5300be88db78cb5bb6dcc84278b5bb
     default:
       return state;
   }
