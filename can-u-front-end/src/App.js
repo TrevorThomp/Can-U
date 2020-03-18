@@ -8,6 +8,7 @@ import Login from './components/login/login';
 import JobList from './components/job-list/job-list';
 import JobItem from './components/job-list/job-item';
 import Dashboard from './components/dashboard/dashboard';
+import cookie from 'react-cookies'
 
 
 
@@ -15,7 +16,8 @@ import Dashboard from './components/dashboard/dashboard';
 function App(props) {
 
   const _addJob = data => {
-    console.log(data)
+    const authCookie = cookie.load('auth')
+    data.token = authCookie;
     data.complete = false;
     props.handlePost(data);
   };
@@ -36,12 +38,17 @@ function App(props) {
     props.handleGetJobs();
   };
 
+  const _getUsers =() => {
+    props.handleGetUsers();
+  }
+
   useEffect(()=> {
     _getJobs();
   })
   return (
     <>
-    <div className="App">    
+    <div className="App">   
+    <button onClick={_getUsers}>GET USERS TEST BUTTON</button> 
       <JobForm handleSubmit={_addJob}/>
       <Login/>
       <JobList jobs={props.jobs.jobList} handleDetails={_toggleDetails} handleDelete={_deleteItem}/>
@@ -64,7 +71,9 @@ const mapDispatchToProps = (dispatch, getState) => ({
   handleDetails: id => dispatch(actions.details(id)),
   handlePost: data => dispatch(actions.postData(data)),
   handleToggle: id => dispatch(actions.toggle(id)),
-  handleDelete: id => dispatch(actions.destroy(id))
+  handleDelete: id => dispatch(actions.destroy(id)),
+
+  handleGetUsers: () => dispatch(actions._getUsers())
 });
 
 export default connect(
