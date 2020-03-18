@@ -9,7 +9,14 @@ import JobItem from './components/job-list/job-item';
 import JobList from './components/job-list/job-list';
 import Login from './components/login/login';
 import Nav from './components/nav/nav';
+
+import Login from './components/login/login'
+import JobList from './components/job-list/job-list'
+import JobItem from './components/job-list/job-item'
+import Footer from './components/footer/footer';
+
 import * as actions from './store/action';
+
 
 
 
@@ -67,12 +74,15 @@ function App(props) {
     <>
       <div className="App">
         <Nav setScreen={setScreen} />
-        
-        
-        <Login />
+
+
+        <When condition={!props.login.loggedIn}>
+          <Login />
+        </When>
 
         <button onClick={_getUsers}>GET USERS TEST</button>
         <button onClick={placeBid}>PLACE BID TEST</button>
+
 
         <When condition={screen === 'main'}>
           <JobList
@@ -83,16 +93,19 @@ function App(props) {
         </When>
 
         <When condition={screen === 'dashboard'}>
-          <Dashboard
-            addJob={_addJob}
-            jobs={props.jobs.jobList}
-            handleDetails={_toggleDetails}
-            handleDelete={_deleteItem}
-          />
+          <Auth capability
+            <Dashboard
+              addJob={_addJob}
+              jobs={props.jobs.jobList}
+              handleDetails={_toggleDetails}
+              handleDelete={_deleteItem}
+            />
+          
         </When>
         <When condition={props.jobs.showDetails}>
           <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
         </When>
+        <Footer />
       </div>
     </>
   );
