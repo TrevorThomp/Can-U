@@ -8,7 +8,7 @@ export const placeBid = payload => dispatch => {
 }
 
 export const closeJobs = payload => dispatch => {
-  return callAPI(`${todoAPI}/jobs/bid/${payload.id}`, "PUT", payload.token)
+  return callAPI(`${todoAPI}/jobs/close/${payload.id}`, "PUT", payload.token)
     .then(record => console.log(record));
 }
 
