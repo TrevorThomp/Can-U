@@ -3,18 +3,18 @@ import React, { useEffect, useState } from 'react';
 import cookie from 'react-cookies';
 import { connect } from "react-redux";
 import './App.css';
-import { When } from './components/conditionals/conditionals';
+import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
-import JobItem from './components/job-list/job-item';
-import Login from './components/login/login';
-import Nav from './components/nav/nav';
-
-
-import JobList from './components/job-list/job-list'
-
 import Footer from './components/footer/footer';
-
+import JobItem from './components/job-list/job-item';
+import JobList from './components/job-list/job-list';
+import Nav from './components/nav/nav';
+import Splash from './components/splash/splash';
 import * as actions from './store/action';
+
+
+
+
 
 
 
@@ -78,41 +78,37 @@ function App(props) {
   return (
     <>
       <div className="App">
-        <Nav setScreen={setScreen} />
-
-
-        <When condition={!props.login.loggedIn}>
-          <Login />
-        </When>
-
-        <button onClick={_getUsers}>GET USERS TEST</button>
-        <button onClick={placeBid}>PLACE BID TEST</button>
-        <button onClick={closeJob}>CLOSE JOB TEST</button>
-
-
-
-        <When condition={screen === 'main'}>
-          <JobList
-            jobs={props.jobs.jobList}
-            handleDetails={_toggleDetails}
-            handleDelete={_deleteItem}
-          />
-        </When>
-
-        <When condition={screen === 'dashboard'}>
-          
-            <Dashboard
-              addJob={_addJob}
-              jobs={props.jobs.jobList}
-              handleDetails={_toggleDetails}
-              handleDelete={_deleteItem}
-            />
-          
-        </When>
-        <When condition={props.jobs.showDetails}>
-          <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
-        </When>
-        <Footer />
+        <If condition={!props.login.loggedIn}>
+          <Then>
+            <Splash />
+          </Then>
+          <Else>
+            <Nav setScreen={setScreen} />
+            <button onClick={_getUsers}>GET USERS TEST</button>
+            <button onClick={placeBid}>PLACE BID TEST</button>
+            <button onClick={closeJob}>CLOSE JOB TEST</button>
+            <When condition={screen === 'main'}>
+              <JobList
+                jobs={props.jobs.jobList}
+                handleDetails={_toggleDetails}
+                handleDelete={_deleteItem}
+              />
+            </When>
+            <When condition={screen === 'dashboard'}>
+              
+                <Dashboard
+                  addJob={_addJob}
+                  jobs={props.jobs.jobList}
+                  handleDetails={_toggleDetails}
+                  handleDelete={_deleteItem}
+                />
+            </When>
+            <When condition={props.jobs.showDetails}>
+              <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
+            </When>
+            <Footer />
+          </Else>
+        </If>
       </div>
     </>
   );
