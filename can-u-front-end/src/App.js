@@ -28,8 +28,10 @@ function App(props) {
     props.handlePost(data);
   };
 
-  const _deleteItem = id => {
-    props.handleDelete(id);
+  const _deleteItem = data => {
+    const authCookie = cookie.load('auth')
+    data.token = authCookie;
+    props.handleDelete(data);
   };
 
   // const _toggleComplete = id => {
@@ -76,6 +78,7 @@ function App(props) {
             addJob={_addJob}
             jobs={props.jobs.jobList}
             handleDetails={_toggleDetails}
+            handleDelete={_deleteItem}
           />
         </When>
         <When condition={props.jobs.showDetails}>
@@ -96,7 +99,7 @@ const mapDispatchToProps = (dispatch, getState) => ({
   handleDetails: id => dispatch(actions.details(id)),
   handlePost: data => dispatch(actions.postData(data)),
   handleToggle: id => dispatch(actions.toggle(id)),
-  handleDelete: id => dispatch(actions.destroy(id)),
+  handleDelete: data => dispatch(actions.destroyData(data)),
 
   handleGetUsers: data => dispatch(actions._getUsers(data))
 });
