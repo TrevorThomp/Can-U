@@ -1,3 +1,5 @@
+import cookie from 'react-cookies';
+
 const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
   return fetch(url, {
     method: method,
@@ -34,6 +36,8 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
       return {loggedIn: false, data: null};
     } 
     else {
+      console.log('signin data', data);
+      cookie.save('auth', data);
       return {loggedIn: true, data: data};
     }
   })
@@ -50,7 +54,15 @@ const callAPISignUp = (url, body, errorHandler) => {
     headers: { "Content-Type": "application/json" },
     body: body ? JSON.stringify(body) : undefined
   })
-    .then(response => response.text())
+    .then(response => {
+      if(response.status === 500){
+        return 'username taken';
+      }else {
+        let token = response.text();
+        cookie.save('auth', token);
+        return token;
+      }
+    })
     .catch(e =>
       typeof errorHandler === "function" ? errorHandler(e) : console.error(e)
     );

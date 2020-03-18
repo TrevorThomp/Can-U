@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 function jobList(props){
   
   const jobs = props.jobs;
@@ -8,10 +9,9 @@ function jobList(props){
     <tr key={job._id}>
       <td>{job.name}</td>
       <td>{job.price}</td>
-      <td>{job.postedBy}</td>
-      <td>{job._id}</td>
+      <td>{job.postedUser}</td>      
       <td><button onClick={() => props.handleDetails(job._id)}>Details</button></td>
-      <td><button onClick={() => props.handleDelete(job._id)}>Delete</button></td>
+      
     </tr>
   );
   return (
