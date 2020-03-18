@@ -1,12 +1,11 @@
+
 import React, {useEffect, useState} from 'react';
 import JobForm from './components/form/form'
 import * as actions from './store/action'
 import { connect } from "react-redux";
-import {When} from './components/conditionals/conditionals';
 import './App.css';
-import Login from './components/login/login';
-import JobList from './components/job-list/job-list';
-import JobItem from './components/job-list/job-item';
+import Auth from './components/auth/auth';
+import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import cookie from 'react-cookies'
 import Nav from './components/nav/nav';
@@ -49,6 +48,7 @@ function App(props) {
   useEffect(()=> {
     _getJobs();
   })
+
   return (
     <>
       <div className="App">
@@ -81,7 +81,8 @@ function App(props) {
 }
 
 const mapStateToProps = state => ({
-  jobs: state.jobs
+  jobs: state.jobs,
+  login: state.login
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
