@@ -32,7 +32,7 @@ const MyJobs = props => {
 }
 
 const mapsStateToProps = (state) => {
-  auth: state.login
+  
 };
 
 export default connect(mapsStateToProps)(MyJobs);
