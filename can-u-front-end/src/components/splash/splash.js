@@ -11,7 +11,7 @@ const Splash = props => {
   return (
     <div className="splashDiv">
       <h1>Welcome to Can-U</h1>
-      <p>Description Here</p>
+      <p>Do you need help moving? mowing your lawn? setting up ikea furniture? There are not a lot of options to find handy help. Search for handy people across the nation!</p>
       <Login />
     </div>
   )

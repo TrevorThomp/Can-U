@@ -3,6 +3,28 @@
   flex-direction: column;
 }
 
+#description-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#description-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  align-content: flex-start;
+}
+
+#description-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; 
+  align-content: flex-start;
+}
+
 label {
   margin-top: 10px;
   margin-bottom: 3px;
@@ -14,4 +36,13 @@ span {
 
 button:hover {
   cursor: pointer;
+}
+
+p {
+  font-size: 14px;
+}
+
+#modal-button {
+  width: 75px;
+  margin-top: 10px;
 }
