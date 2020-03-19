@@ -169,3 +169,13 @@ export const signUpFail = payload => {
   };
 };
 
+/**
+ * action to logout
+ * @param {*} payload 
+ */
+export const logout = payload => {
+  return {
+    type: "LOGOUT",
+    payload: payload
+  };
+};
