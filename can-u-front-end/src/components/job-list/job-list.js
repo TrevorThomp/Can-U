@@ -1,6 +1,5 @@
 import React from 'react';
 import Auth from '../auth/auth';
-import { If, Then } from '../conditionals/conditionals';
 
 function jobList(props){
   
@@ -8,6 +7,7 @@ function jobList(props){
   // console.log(props.jobs)
 
   const listJobs = jobs.map(job => 
+
 
         <tr key={job._id}>
           <td>{job.name}</td>
@@ -18,7 +18,9 @@ function jobList(props){
           <Auth capability='superuser'><td><button onClick={() => props.handleDelete(job)}>Delete</button></td></Auth>
         </tr>
  
+
   );
+
   return (
     <table>
       <tbody>
