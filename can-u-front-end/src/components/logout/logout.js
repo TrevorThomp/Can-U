@@ -14,7 +14,7 @@ const LogOut = props => {
 
   return (
     <>
-      <button onClick={logout}>Log Out</button>
+      <span onClick={logout}>Log Out</span>
     </>
   )
 }
