@@ -1,3 +1,5 @@
+@import '../../style/variables';
+
 .modal {
 
     bottom:0;
@@ -27,7 +29,7 @@
         border-radius: 5px;
         display:flex;
         flex-direction:column;
-        height:20%;
+        height:28%;
         margin:auto;
         padding:0;
         position:relative;
@@ -37,7 +39,7 @@
         z-index:1000;
   
         > header {
-            background: #ccc;
+            background: $mainColor;
             border-bottom: 0 none;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
