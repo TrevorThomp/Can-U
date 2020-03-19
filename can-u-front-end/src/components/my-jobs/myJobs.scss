@@ -1,0 +1,16 @@
+@import '../../style/variables';
+
+.myjob-table {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 2em;
+    background-color: $darkAccent;
+    width: 50%;
+
+
+h3 {
+    font-family: $headerFont;
+    font-size: 30px;
+}
+}
