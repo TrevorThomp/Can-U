@@ -29,6 +29,9 @@ MVPs
 
 # Instructions/Setup
 [Setup](./Reactinstructions.md)
+
+# Deployment
+[CanU](https://401-backend.github.io/can-u-job-front-end/)
  
 # Trello Board
 [Trello](https://trello.com/b/7CutaFuI/canu)
