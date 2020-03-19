@@ -1,7 +1,7 @@
+import jwt from 'jsonwebtoken';
 import React from 'react';
 import { connect } from 'react-redux';
 import './myJobs.scss';
-import jwt from 'jsonwebtoken';
 
 
 /**
@@ -16,33 +16,32 @@ const MyJobs = props => {
   
   
   const listJobs = jobs.map(job => (
-    <tr key={job._id}>
+    <tr id='jobRow' key={job._id}>
       <td>{job.name}</td>
-      <td>{job.price}</td>
-      <td>{job.description}</td>
+      <td>${job.price}</td>
+      {/* <td>{job.description}</td> */}
       <td>{job.isOpen ? 'Open' : 'Closed'}</td>
 
-      <td>
+      <td class='jobButtons'>
         <button onClick={() => props.handleDelete(job)}>Delete</button>
       </td>
-      <td>
+      <td class='jobButtons'>
         <button onClick={() => props.handleDetails(job._id)}>Details</button>
       </td>
 
-      <td>
+      <td class='jobButtons'>
         <button onClick={() => props.handleCloseJob(job._id)}>Close Job</button>
       </td>
-
     </tr>
   ));
   return (
     <div className="myjob-table">
       <table>
         <tbody>
-          <tr className="headings" key="headings">
+          <tr id="headings" key="headings">
             <td>Name</td>
             <td>Bid</td>
-            <td>Description</td>
+            {/* <td>Description</td> */}
             <td>Status</td>
           </tr>
           {listJobs}
