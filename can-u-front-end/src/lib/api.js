@@ -18,7 +18,7 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
     headers: { 
       "Content-Type": "application/json",
       "Authorization": "Bearer " + token},
-    body: body !== undefined ? JSON.stringify(body) : undefined
+    body: body ? JSON.stringify(body) : undefined
   })
     .then(response => response.json())
     .then(data => (typeof handler === "function" ? handler(data) : data))
@@ -52,7 +52,7 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
       return {loggedIn: false, data: null, loginStatus: false};
     } 
     else {
-      console.log('signin data', data);
+      
       cookie.save('auth', data);
       return {loggedIn: true, data: data, loginStatus: true};
     }

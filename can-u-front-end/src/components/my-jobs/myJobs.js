@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
  * @param {*} props 
  */
 const MyJobs = props => {
-
+  
   const username = jwt.verify(props.user.token, 
     'sauce').username;
   const jobs = props.jobs.jobList.filter(job => job.postedUser === username);
