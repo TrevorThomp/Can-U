@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/action';
+import './signUp.scss';
 
 /**
  * Component that renders a sign up form
@@ -41,8 +42,8 @@ const SignUp = props => {
     props.switchLogin('signin')
   }
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
+    <div id="signUpDiv">
+      <form className="signUpForm" onSubmit={handleFormSubmit}>
         <label>
           <input
             placeholder="email"
@@ -67,10 +68,10 @@ const SignUp = props => {
             minLength='6'
           />
         </label>
-        <input type="submit" value="Sign Up" />
+        <input id="loginButton" type="submit" value="Sign Up" />
       </form>
       <p>{props.login.signupStatus}</p>
-      <p onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Already a member?.. click to login</p>
+      <p className="loginSwitch" onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Already a member?.. click to login</p>
     </div>
   )
 }

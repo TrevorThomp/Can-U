@@ -56,10 +56,10 @@ const SignIn = props => {
           onChange={handleInputChange}
           type='password'
         />
-        <input className="loginButton" type="submit" value="Log In" />
+        <input id="loginButton" type="submit" value="Log In" />
       </form>
       <p>{loginError}</p>
-      <p id="signUpButton" onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Not a member?.. click to sign up</p>
+      <p className="loginSwitch" onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Not a member?.. click to sign up</p>
     </div>
   )
 }
