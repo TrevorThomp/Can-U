@@ -2,16 +2,17 @@
 import React, { useEffect, useState } from 'react';
 import cookie from 'react-cookies';
 import { connect } from "react-redux";
-import './style/App.css';
 import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import Footer from './components/footer/footer';
+import Header from './components/header/header';
 import JobItem from './components/job-list/job-item';
 import JobList from './components/job-list/job-list';
+import LogOut from './components/logout/logout';
 import Nav from './components/nav/nav';
-import Header from './components/header/header'
 import Splash from './components/splash/splash';
 import * as actions from './store/action';
+import './style/App.css';
 
 
 /**
@@ -80,6 +81,7 @@ function App(props) {
           </Then>
           <Else>
             <Nav setScreen={setScreen} />
+            <LogOut/>
             <button onClick={_getUsers}>GET USERS TEST</button>
             <button onClick={placeBid}>PLACE BID TEST</button>
             <button onClick={closeJob}>CLOSE JOB TEST</button>
