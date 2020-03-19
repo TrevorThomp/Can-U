@@ -47,6 +47,7 @@ export default (state = initialState, action) => {
           signupStatus: payload,
         }
       case "LOGOUT":
+        cookie.remove('auth');
         return {
           token: null,
           loggedIn: false,
