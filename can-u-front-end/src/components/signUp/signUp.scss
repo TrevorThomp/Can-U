@@ -1,13 +1,13 @@
 @import '../../style/variables';
 
-.signInDiv {
+.signUpDiv {
     display: flex;
     width: 70%;
     flex-direction: column;
     justify-content: end;
 }
 
-  .signInForm {
+  .signUpForm {
     background-image: linear-gradient(to top, $darkAccent 0%, $mainColor 100%);
     padding: 30px 30px 30px 30px;
     border-radius: 10px;
@@ -18,7 +18,7 @@
       
   
 
-   input {
+    input {
     font-family: $monoFont;
     border-radius: 5px;
     font-size: 16px;
@@ -49,22 +49,4 @@
       background-color: darken($dark, 5%);
     }
   }
-
-  .loginSwitch {
-        display: inline-block;
-        transition-duration: 0.3s;
-        transition-property: transform;
-        -webkit-tap-highlight-color: transparent;
-        transform: translateZ(0);
-        box-shadow: 0 0 1px transparent;
-      }
-      .loginSwitch:hover {
-        transform: scale(1.1);
-      }
-
-
-    
-    
-
-  
   
