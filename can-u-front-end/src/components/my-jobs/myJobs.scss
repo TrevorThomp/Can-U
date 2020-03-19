@@ -1,16 +1,52 @@
 @import '../../style/variables';
 
 .myjob-table {
+    font-family: $mainFont;
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     margin: 2em;
     background-color: $darkAccent;
     width: 50%;
 
+    hr {
+        width: 100%;
+    }
 
-h3 {
-    font-family: $headerFont;
-    font-size: 30px;
-}
+    table {
+        margin: 1em;
+        background-color: $light;
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 20px 20px;
+
+    }
+
+    tbody {
+        background-color: $light;
+    }
+
+    #jobRow {
+        background-color:$light;
+        border-bottom: 1px solid black;
+
+        td {
+            padding-bottom: .5em;
+            padding-top: .5em;
+        }
+    }
+
+    #headings {
+        font-size: 1.25em;
+        font-weight: bold;
+        td {
+            text-decoration: underline;
+        }
+    }
+
+
+// h3 {
+//     font-family: $headerFont;
+//     font-size: 30px;
+// }
 }

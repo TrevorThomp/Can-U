@@ -1,14 +1,14 @@
 @import '../../style/variables';
 
 header {
-    background: $dark;
+    background-image: linear-gradient(to top, $mainColor 0%, $darkAccent 100%);
   
     h1 {
       font-family: $headerFont;
-      font-size: 45px;
+      font-size: 50px;
       color: #eee;
       display: inline-block;
-      margin: 1em auto;
+      text-shadow: 4px 4px #00000046;
     }
   
 }

@@ -2,6 +2,7 @@
 
 #nav {
     background: $mainColor;
+    box-shadow: 5px 5px 5px rgba($dark, 0.3);
 
     ul {
       list-style-type: none;
@@ -26,10 +27,6 @@
             top: 0;
           }
 
-          &.here,
-          &.here:hover {
-            color: red;
-          }
         }
 
         &:hover {

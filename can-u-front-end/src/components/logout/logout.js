@@ -7,7 +7,10 @@ import * as actions from '../../store/action';
  * @param {*} props 
  */
 const LogOut = props => {
-
+  /**
+   * Log out
+   * @function
+   */
   const logout = () => {
     props.handleLogout();
   }

@@ -1,10 +1,13 @@
 import React from 'react';
 import Auth from '../auth/auth';
 
+/**
+ * Component for the rendering a list of all jobs
+ * @param {*} props 
+ */
 function jobList(props){
   
-  const jobs = props.jobs.filter(job => job.isOpen);
-  // console.log(props.jobs)
+  const jobs = props.jobs.filter(job => job.isOpen); 
 
   const listJobs = jobs.map(job => 
 
