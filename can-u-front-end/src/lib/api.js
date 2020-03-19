@@ -10,6 +10,7 @@ import cookie from 'react-cookies';
  * @param {function} errorHandler 
  */
 const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
+  
   return fetch(url, {
     method: method,
     mode: "cors",
@@ -17,7 +18,7 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
     headers: { 
       "Content-Type": "application/json",
       "Authorization": "Bearer " + token},
-    body: body ? JSON.stringify(body) : undefined
+    body: body !== undefined ? JSON.stringify(body) : undefined
   })
     .then(response => response.json())
     .then(data => (typeof handler === "function" ? handler(data) : data))

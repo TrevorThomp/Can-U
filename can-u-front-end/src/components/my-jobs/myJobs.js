@@ -19,10 +19,19 @@ const MyJobs = props => {
       <td>{job.name}</td>
       <td>{job.price}</td>
       <td>{job.description}</td>
-      <td><button onClick={() => props.handleDelete(job)}>Delete</button></td>
+      <td>{job.isOpen ? 'Open' : 'Closed'}</td>
+
+      <td>
+        <button onClick={() => props.handleDelete(job)}>Delete</button>
+      </td>
       <td>
         <button onClick={() => props.handleDetails(job._id)}>Details</button>
       </td>
+
+      <td>
+        <button onClick={() => props.handleCloseJob(job._id)}>Close Job</button>
+      </td>
+
     </tr>
   ));
   return (
@@ -33,6 +42,7 @@ const MyJobs = props => {
             <td>Name</td>
             <td>Bid</td>
             <td>Description</td>
+            <td>Status</td>
           </tr>
           {listJobs}
         </tbody>
