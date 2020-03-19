@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/action';
 
+/**
+ * Component that renders a sign up form
+ * @param {*} props 
+ */
 const SignUp = props => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

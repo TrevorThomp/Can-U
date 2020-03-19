@@ -11,6 +11,9 @@ let reducers = combineReducers({
   login: loginReducer
 });
 
+/**
+ * function to create redux store
+ */
 const store = () =>
   createStore(reducers, composeWithDevTools(applyMiddleware(thunk)));
 

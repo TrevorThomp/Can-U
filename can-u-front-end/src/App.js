@@ -13,17 +13,14 @@ import Splash from './components/splash/splash';
 import * as actions from './store/action';
 
 
-
-
-
-
-
-
-
+/**
+ * Main App component
+ * @param {*} props
+ */
 function App(props) {
 
   const [screen, setScreen] = useState('dashboard')
- 
+
 
   const _addJob = data => {
     const authCookie = cookie.load('auth')

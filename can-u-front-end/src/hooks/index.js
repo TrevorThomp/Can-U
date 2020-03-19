@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+/**
+ * Use form hook
+ * @param {*} callback 
+ */
 const useForm = callback => {
   const [values, setValues] = useState({});
 
