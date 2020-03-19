@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/can-u-job-front-end/static/css/main.66287876.chunk.css",
+    "main.js": "/can-u-job-front-end/build/main.58beb8d2.js",
+    "runtime-main.js": "/can-u-job-front-end/build/bundle.39a4c501.js",
+    "build/2.883c6478.js": "/can-u-job-front-end/build/2.883c6478.js",
+    "build/2.883c6478.js.LICENSE.txt": "/can-u-job-front-end/build/2.883c6478.js.LICENSE.txt",
+    "index.html": "/can-u-job-front-end/index.html",
+    "precache-manifest.fd95690d4374b21c1157166a4df2ab13.js": "/can-u-job-front-end/precache-manifest.fd95690d4374b21c1157166a4df2ab13.js",
+    "service-worker.js": "/can-u-job-front-end/service-worker.js",
+    "static/css/main.66287876.chunk.css.map": "/can-u-job-front-end/static/css/main.66287876.chunk.css.map"
+  },
+  "entrypoints": [
+    "build/bundle.39a4c501.js",
+    "build/2.883c6478.js",
+    "static/css/main.66287876.chunk.css",
+    "build/main.58beb8d2.js"
+  ]
+}

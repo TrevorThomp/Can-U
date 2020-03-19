@@ -8,7 +8,9 @@ import Modal from '../modal/modal';
 const JobItem = props => {
   const job = props.item || {};
   const [bid, setBid] = useState(0);
-
+  /**
+   * @function Add Bid
+   */
   const addBid = () => {
     bid >= job.price? alert(`Must bid less than current price of ${job.price}`): props.placeBid(job._id, bid);
   }

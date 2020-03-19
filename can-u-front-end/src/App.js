@@ -23,34 +23,52 @@ function App(props) {
 
   const [screen, setScreen] = useState('dashboard')
 
-
+  /**
+   * Call add job action
+   * @param {*} data 
+   */
   const _addJob = data => {
     const authCookie = cookie.load('auth')
     data.token = authCookie;
     data.complete = false;
     props.handlePost(data);
   };
-
+  /**
+   * Call destroy item action
+   * @param {*} data 
+   */
   const _deleteItem = data => {
     const authCookie = cookie.load('auth')
     data.token = authCookie;
     props.handleDelete(data);
   };
-
+  /**
+   * Call toggle details action
+   * @param {*} id 
+   */
   const _toggleDetails = id => {
     props.handleDetails(id);
   };
-
+  /**
+   *  Call get jobs action
+   */
   const _getJobs = () => {
     props.handleGetJobs();
   };
-
+  /**
+   * Call get users action
+   * @param {*} data 
+   */
   const _getUsers = data => {
     const authCookie = cookie.load('auth')
     data.token = authCookie;
     props.handleGetUsers(data);
   }
-
+  /**
+   * Call Place Bid action
+   * @param {*} id 
+   * @param {*} price 
+   */
   const placeBid = (id, price) => {
     console.log(props.jobs.jobList[0]._id)
     const authCookie = cookie.load('auth');
@@ -58,7 +76,10 @@ function App(props) {
     let body = {price: price};
     props.handlePlaceBid({id: id, body: body, token: authCookie})
   }
-
+  /**
+   * Call Close job action
+   * @param {*} id 
+   */
   const closeJob = (id) => {
     const authCookie = cookie.load('auth');
     
