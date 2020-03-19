@@ -3,7 +3,7 @@ import SignIn from "./signIn.js";
 import createStore from '../../store'
 import { Provider } from 'react-redux';
 
-import Enzyme, { mount, shallow, render } from "enzyme";
+import Enzyme, {mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 Enzyme.configure({ adapter: new Adapter() });
 
