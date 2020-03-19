@@ -1,6 +1,7 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import useForm from '../../hooks/';
+import './form.scss';
 
 /**
  * Component to render form to add a new job
@@ -10,8 +11,9 @@ const TodoForm = props => {
   const { handleChange, handleSubmit } = useForm(props.handleSubmit);
   return (
     <>
+    <div id="formDiv">
       <h3>Add Job</h3>
-      <form onChange={handleChange} onSubmit={handleSubmit}>
+      <form className="jobForm" onChange={handleChange} onSubmit={handleSubmit}>
         <label>
           <span>Job</span>
           <Field
@@ -39,6 +41,7 @@ const TodoForm = props => {
         </label>
         <button>Add Job</button>
       </form>
+      </div>
     </>
   );
 };

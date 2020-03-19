@@ -1,0 +1,13 @@
+@import '../../style/variables';
+
+
+    h1 {
+        font-family: $mainFont;
+    }
+
+    .splashDiv {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }

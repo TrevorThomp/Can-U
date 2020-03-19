@@ -1,5 +1,7 @@
+@import '../../style/variables';
+
 #nav {
-    background: rgb(255, 74, 74);
+    background: $mainColor;
 
     ul {
       list-style-type: none;
