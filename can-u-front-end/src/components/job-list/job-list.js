@@ -15,12 +15,12 @@ function jobList(props){
         <tr key={job._id}>
           <td>{job.name}</td>
           <td>{job.price}</td>
+          <td>{job.currentBidder}</td>
           <td>{job.postedUser}</td>      
           <td><button onClick={() => props.handleDetails(job._id)}>Details</button></td>
           
           <Auth capability='superuser'><td><button onClick={() => props.handleDelete(job)}>Delete</button></td></Auth>
         </tr>
- 
 
   );
 
@@ -30,6 +30,7 @@ function jobList(props){
         <tr key="headings">
           <td>Name</td>
           <td>Bid</td>
+          <td>Current Bidder</td>
           <td>Owner</td>
         </tr>
         {listJobs}
