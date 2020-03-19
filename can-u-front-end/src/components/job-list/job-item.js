@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Modal from '../modal/modal';
+import './job-item.scss'
 
 /**
  * Component to render one job item is a list
@@ -17,16 +18,16 @@ const JobItem = props => {
 
   return (
     <Modal title="Job" close={props.handleDetails}>
-      <div>
+      <div className="modal-container">
         <span>Name: {job.name}</span>
         <span>Description: {job.description}</span>
-        <span>Price: {job.price}</span>
+        <span>Price: ${job.price}</span>
         <span>Posted by: {job.postedUser}</span>
         <label>
-          <span>Bid Amount</span>
+          <span>Bid Amount:</span>
           <input id="bid" onChange={e => setBid(e.target.value)} />
         </label>
-        <button onClick={() => addBid()}>Place Bid</button>
+        <button onClick={() => {addBid(); props.handleDetails()}}>Place Bid</button>
       </div>
     </Modal>
   );
