@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/action';
 
+/**
+ * Component that renders a signin form
+ * @param {*} props 
+ */
 const SignIn = props => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

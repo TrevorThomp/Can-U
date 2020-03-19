@@ -13,6 +13,11 @@ const initialState = {
 
 };
 
+/**
+ * Reducer for login state
+ * @param {object} state
+ * @param {object} action
+ */
 export default (state = initialState, action) => {
   let { type, payload } = action;
   switch (type) {

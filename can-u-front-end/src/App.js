@@ -2,28 +2,26 @@
 import React, { useEffect, useState } from 'react';
 import cookie from 'react-cookies';
 import { connect } from "react-redux";
-import './App.css';
+import './style/App.css';
 import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import Footer from './components/footer/footer';
 import JobItem from './components/job-list/job-item';
 import JobList from './components/job-list/job-list';
 import Nav from './components/nav/nav';
+import Header from './components/header/header'
 import Splash from './components/splash/splash';
 import * as actions from './store/action';
 
 
-
-
-
-
-
-
-
+/**
+ * Main App component
+ * @param {*} props
+ */
 function App(props) {
 
   const [screen, setScreen] = useState('dashboard')
- 
+
 
   const _addJob = data => {
     const authCookie = cookie.load('auth')
@@ -37,10 +35,6 @@ function App(props) {
     data.token = authCookie;
     props.handleDelete(data);
   };
-
-  // const _toggleComplete = id => {
-  //   props.handleToggle(id);
-  // };
 
   const _toggleDetails = id => {
     props.handleDetails(id);
@@ -70,14 +64,16 @@ function App(props) {
     props.handleCloseJob({id: id, token: authCookie})
   }
 
+  
+
   useEffect(()=> {
-    _getJobs();
-    console.log()
+    _getJobs();    
   })
 
   return (
     <>
       <div className="App">
+        <Header />
         <If condition={!props.login.loggedIn}>
           <Then>
             <Splash />
@@ -87,6 +83,7 @@ function App(props) {
             <button onClick={_getUsers}>GET USERS TEST</button>
             <button onClick={placeBid}>PLACE BID TEST</button>
             <button onClick={closeJob}>CLOSE JOB TEST</button>
+            
             <When condition={screen === 'main'}>
               <JobList
                 jobs={props.jobs.jobList}
