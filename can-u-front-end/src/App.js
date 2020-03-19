@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import cookie from 'react-cookies';
 import { connect } from "react-redux";
-import './App.css';
+import './style/App.css';
 import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import Footer from './components/footer/footer';
@@ -76,6 +76,7 @@ function App(props) {
   return (
     <>
       <div className="App">
+        <Header />
         <If condition={!props.login.loggedIn}>
           <Then>
             <Splash />
