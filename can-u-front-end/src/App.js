@@ -8,7 +8,6 @@ import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import JobItem from './components/job-list/job-item';
 import JobList from './components/job-list/job-list';
-import LogOut from './components/logout/logout';
 import Nav from './components/nav/nav';
 import Splash from './components/splash/splash';
 import * as actions from './store/action';
@@ -101,8 +100,7 @@ function App(props) {
             <Splash />
           </Then>
           <Else>
-            <Nav setScreen={setScreen} />
-            <LogOut/>      
+            <Nav setScreen={setScreen} />      
             
             <When condition={screen === 'main'}>
               <JobList
