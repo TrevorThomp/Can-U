@@ -1,5 +1,6 @@
 import React from 'react';
 import Login from '../login/login';
+import './splash.scss';
 
 /**
  * Component that renders a splash page that holds a login form and is shown if a users lands on the page without being logged in
@@ -8,9 +9,9 @@ import Login from '../login/login';
 const Splash = props => {
 
   return (
-    <div>
+    <div className="splashDiv">
       <h1>Welcome to Can-U</h1>
-      <p>This is some information describing our app blah blah blah blahblah blah blahblah blahblahblahblahblahblahblahblah blah</p>
+      <p>Description Here</p>
       <Login />
     </div>
   )

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/action';
+import '../login/login.scss';
 
 /**
  * Component that renders a signin form
@@ -41,8 +42,8 @@ const SignIn = props => {
   }, [props.login.loginStatus])
 
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
+    <div className="signInDiv">
+      <form className="signInForm" onSubmit={handleFormSubmit}>
         <input
           placeholder="username"
           name="username"
@@ -53,10 +54,10 @@ const SignIn = props => {
           name="password"
           onChange={handleInputChange}
         />
-        <input type="submit" value="Log In" />
+        <input className="loginButton" type="submit" value="Log In" />
       </form>
       <p>{loginError}</p>
-      <p onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Not a member?.. click to sign up</p>
+      <p id="signUpButton" onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Not a member?.. click to sign up</p>
     </div>
   )
 }
