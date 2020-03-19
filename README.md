@@ -27,7 +27,8 @@ MVPs
 * Graphs showing overall statistics of the entire application
 * Add rating system to increase user credibility
 
- 
+# Instructions/Setup
+[Setup](./Reactinstructions.md)
  
 # Trello Board
 [Trello](https://trello.com/b/7CutaFuI/canu)
