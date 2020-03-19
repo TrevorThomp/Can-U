@@ -1,6 +1,10 @@
 import React from 'react';
 import Modal from '../modal/modal';
 
+/**
+ * Component to render one job item is a list
+ * @param {*} props 
+ */
 const JobItem = props => {
   const job = props.item || {};
 

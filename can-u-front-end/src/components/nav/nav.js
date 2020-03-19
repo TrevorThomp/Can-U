@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * Component that renders a navigation bar
+ * @param {*} props 
+ */
 const Nav = props => {
   return(
     <div>

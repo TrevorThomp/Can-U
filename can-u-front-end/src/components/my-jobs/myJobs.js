@@ -1,6 +1,10 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
+/**
+ * Component that renders a list of all of a users jobs
+ * @param {*} props 
+ */
 const MyJobs = props => {
   const jobs = props.jobs;
 

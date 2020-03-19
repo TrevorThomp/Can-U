@@ -1,5 +1,14 @@
 import cookie from 'react-cookies';
 
+/**
+ * general function for API calls
+ * @param {string} url 
+ * @param {string} method 
+ * @param {object} body 
+ * @param {string} token 
+ * @param {function} handler 
+ * @param {function} errorHandler 
+ */
 const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
   return fetch(url, {
     method: method,
@@ -17,7 +26,13 @@ const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
     );
 };
 
-
+/**
+ * function to hit API on signin
+ * @param {string} url 
+ * @param {string} auth 
+ * @param {function} handler 
+ * @param {function} errorHandler 
+ */
 const callAPIBasic = (url, auth, handler, errorHandler) => {
 
   return fetch(url, {
@@ -46,6 +61,12 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
     );
 };
 
+/**
+ * function to hit API for signup
+ * @param {string} url 
+ * @param {object} body 
+ * @param {function} errorHandler 
+ */
 const callAPISignUp = (url, body, errorHandler) => {
   return fetch(url, {
     method: 'POST',
@@ -69,3 +90,4 @@ const callAPISignUp = (url, body, errorHandler) => {
 };
 
 export { callAPI, callAPIBasic, callAPISignUp };
+

@@ -1,5 +1,5 @@
-import cookie from "react-cookies";
 import jwt from 'jsonwebtoken';
+import cookie from "react-cookies";
 
 const cookieToken = cookie.load("auth");
 const token = cookieToken || null;
@@ -14,6 +14,11 @@ const initialState = {
 
 };
 
+/**
+ * Reducer for login state
+ * @param {object} state
+ * @param {object} action
+ */
 export default (state = initialState, action) => {
   let { type, payload } = action;
   switch (type) {
@@ -23,14 +28,13 @@ export default (state = initialState, action) => {
       return {
         token: payload.data,
         loggedIn: payload.loggedIn,
-        // user: jwt.verify(payload.data, `sauce`)
+        user: jwt.verify(payload.data, `sauce`)
       }
     case "SIGN_UP_SUCCESS":
       return {
         token: payload,
         loggedIn: true,
-
-        // user: jwt.verify(payload, `sauce`)
+        user: jwt.verify(payload, `sauce`)
 
       }
       case "SIGN_UP_FAIL":
