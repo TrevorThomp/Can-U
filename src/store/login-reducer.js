@@ -4,11 +4,12 @@ import cookie from "react-cookies";
 const cookieToken = cookie.load("auth");
 const token = cookieToken || null;
 
+
 const initialState = {
   token: token,
   loggedIn: !!token,
   signupStatus: null,
-  loginStatus: null,
+
   user: '',
 
 };
@@ -23,36 +24,22 @@ export default (state = initialState, action) => {
   switch (type) {
     case "LOGIN":
       console.log('reducer payload', payload);
-      let userInfo;
-      if(payload.data){
-        userInfo = jwt.verify(payload.data, `sauce`);
-      }else {
-        userInfo = null;
-      }
+
       return {
         token: payload.data,
         loggedIn: payload.loggedIn,
-        loginStatus: payload.loginStatus,
-        user: userInfo
+        user: jwt.verify(payload.data, `sauce`)
       }
     case "SIGN_UP_SUCCESS":
       return {
         token: payload,
         loggedIn: true,
-        user: jwt.verify(payload, `sauce`) || null
+        user: jwt.verify(payload, `sauce`)
 
       }
       case "SIGN_UP_FAIL":
         return {
           signupStatus: payload,
-        }
-      case "LOGOUT":
-        return {
-          token: null,
-          loggedIn: false,
-          signupStatus: null,
-          loginStatus: null,
-          user: '',
         }
     default:
       return state;

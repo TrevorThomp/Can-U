@@ -19,7 +19,7 @@ MVPs
 5. A component that shows a detailed view of a particular job
 6. On the detail view, a user can place a bid.
 7. Have a slightly different super user dashboard with the ability to delete or edit any job within the database.
-8. Have users be notified of activity through email on their jobs and jobs they have bid.Have a button on the login form to alternatively login using OAuth.
+8. Have users be notified of activity through email on their jobs and jobs they have bid.
 9. Dark mode/light mode options
 10. Job history
 
@@ -27,7 +27,8 @@ MVPs
 * Graphs showing overall statistics of the entire application
 * Add rating system to increase user credibility
 
- 
+# Instructions/Setup
+[Setup](./Reactinstructions.md)
  
 # Trello Board
 [Trello](https://trello.com/b/7CutaFuI/canu)

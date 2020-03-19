@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../store/action';
 
@@ -9,10 +9,8 @@ import * as actions from '../../store/action';
 const SignIn = props => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [loginError, setLoginError] = useState();
 
   const handleInputChange = (e) => {
-    // eslint-disable-next-line default-case
     switch(e.target.name){
       case 'username':
         setUsername(e.target.value);
@@ -35,12 +33,6 @@ const SignIn = props => {
     props.switchLogin('signup')
   }
 
-  useEffect(() => {
-    if(props.login.loginStatus === false){
-      setLoginError('Invalid Username/Password')
-    }
-  }, [props.login.loginStatus])
-
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
@@ -56,14 +48,12 @@ const SignIn = props => {
         />
         <input type="submit" value="Log In" />
       </form>
-      <p>{loginError}</p>
       <p onClick={handleLoginSwitch} style={{ cursor:"pointer" }}>Not a member?.. click to sign up</p>
     </div>
   )
 }
 
 const mapStateToProps = state => ({
-  login: state.login
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({
