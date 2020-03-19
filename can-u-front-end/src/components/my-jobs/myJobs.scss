@@ -2,15 +2,16 @@
 
 .myjob-table {
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     margin: 2em;
     background-color: $darkAccent;
     width: 50%;
 
 
-h3 {
-    font-family: $headerFont;
-    font-size: 30px;
+.headings {
+    font-family: $mainFont;
+    font-size: 20px;
+    color: $light;
 }
 }

@@ -39,7 +39,7 @@ const MyJobs = props => {
     <div className="myjob-table">
       <table>
         <tbody>
-          <tr key="headings">
+          <tr className="headings" key="headings">
             <td>Name</td>
             <td>Bid</td>
             <td>Description</td>
