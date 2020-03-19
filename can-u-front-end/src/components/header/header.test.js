@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../components/header/header.js";
+import Header from "./header";
 
-import Enzyme, { mount, shallow, render } from "enzyme";
+import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -14,15 +14,5 @@ describe("<Header /> component", () => {
   it("should render the h1", () => {
     const head = shallow(<Header />);
     expect(head.find("h1").exists()).toBeTruthy();
-  });
-
-  it("should render the nav", () => {
-    const head = shallow(<Header />);
-    expect(head.find("nav").exists()).toBeTruthy();
-  });
-
-  it("should render the Link", () => {
-    const head = shallow(<Header />);
-    expect(head.find("Link").exists()).toBeTruthy();
   });
 });

@@ -7,7 +7,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe("<SignUp /> component", () => {
   it("should render the <div>", () => {
-    const signUp = shallow(<SignUp />);
+    const signUp = mount(<SignUp />);
     expect(signUp.find("div").exists()).toBeTruthy();
   });
 

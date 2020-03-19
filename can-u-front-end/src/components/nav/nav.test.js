@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "../components/nav/nav.js";
+import Nav from "./nav.js";
 
-import Enzyme, { mount, shallow, render } from "enzyme";
+import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -13,5 +13,4 @@ describe("<Nav /> component", () => {
     expect(nav.find("li").exists()).toBeTruthy();
     expect(nav.find("span").exists()).toBeTruthy();
   });
-
 });
