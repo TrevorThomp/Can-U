@@ -9,8 +9,7 @@ const initialState = {
   loggedIn: !!token,
   signupStatus: null,
   loginStatus: null,
-  user: '',
-
+  user: (token) ? jwt.verify(token, 'sauce') : null,
 };
 
 /**
@@ -22,13 +21,13 @@ export default (state = initialState, action) => {
   let { type, payload } = action;
   switch (type) {
     case "LOGIN":
-      console.log('reducer payload', payload);
       let userInfo;
       if(payload.data){
         userInfo = jwt.verify(payload.data, `sauce`);
       }else {
         userInfo = null;
       }
+      console.log('user', userInfo);
       return {
         token: payload.data,
         loggedIn: payload.loggedIn,
