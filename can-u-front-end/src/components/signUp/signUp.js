@@ -48,6 +48,7 @@ const SignUp = props => {
             placeholder="email"
             name="email"
             onChange={handleInputChange}
+            type='email'
           />
         </label>
         <label>
@@ -62,6 +63,8 @@ const SignUp = props => {
             placeholder="password"
             name="password"
             onChange={handleInputChange}
+            type='password'
+            minLength='6'
           />
         </label>
         <input type="submit" value="Sign Up" />

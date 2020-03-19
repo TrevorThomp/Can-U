@@ -54,6 +54,7 @@ const SignIn = props => {
           placeholder="password"
           name="password"
           onChange={handleInputChange}
+          type='password'
         />
         <input className="loginButton" type="submit" value="Log In" />
       </form>
