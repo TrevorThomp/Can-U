@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import jwt from 'jsonwebtoken';
 
 
 /**
@@ -7,18 +8,30 @@ import { connect } from 'react-redux';
  * @param {*} props 
  */
 const MyJobs = props => {
-  const jobs = props.jobs.filter(job => job.postedBy === props.user);
 
-  console.log([props.user])
+  const username = jwt.verify(props.user.token, 
+    'sauce').username;
+  const jobs = props.jobs.jobList.filter(job => job.postedUser === username);
+  
+  
   const listJobs = jobs.map(job => (
     <tr key={job._id}>
       <td>{job.name}</td>
       <td>{job.price}</td>
       <td>{job.description}</td>
-      <td><button onClick={() => props.handleDelete(job)}>Delete</button></td>
+      <td>{job.isOpen ? 'Open' : 'Closed'}</td>
+
+      <td>
+        <button onClick={() => props.handleDelete(job)}>Delete</button>
+      </td>
       <td>
         <button onClick={() => props.handleDetails(job._id)}>Details</button>
       </td>
+
+      <td>
+        <button onClick={() => props.handleCloseJob(job._id)}>Close Job</button>
+      </td>
+
     </tr>
   ));
   return (
@@ -29,6 +42,7 @@ const MyJobs = props => {
             <td>Name</td>
             <td>Bid</td>
             <td>Description</td>
+            <td>Status</td>
           </tr>
           {listJobs}
         </tbody>
@@ -38,7 +52,8 @@ const MyJobs = props => {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.login.user,
+  user: state.login,
+  jobs: state.jobs
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({});

@@ -59,9 +59,9 @@ function App(props) {
     props.handlePlaceBid({id: id, body: body, token: authCookie})
   }
 
-  const closeJob = () => {
+  const closeJob = (id) => {
     const authCookie = cookie.load('auth');
-    let id = props.jobs.jobList[0]._id;
+    
     props.handleCloseJob({id: id, token: authCookie})
   }
 
@@ -100,6 +100,7 @@ function App(props) {
                   jobs={props.jobs.jobList}
                   handleDetails={_toggleDetails}
                   handleDelete={_deleteItem}
+                  handleCloseJob={closeJob}
                 />
             </When>
             <When condition={props.jobs.showDetails}>
@@ -126,7 +127,7 @@ const mapDispatchToProps = (dispatch, getState) => ({
   handleDelete: data => dispatch(actions.destroyData(data)),
   handlePlaceBid: data => dispatch(actions.placeBid(data)),
   handleGetUsers: data => dispatch(actions._getUsers(data)),
-  handleCloseJob: () => dispatch(actions.closeJobs())
+  handleCloseJob: data => dispatch(actions.closeJobs(data))
 });
 
 export default connect(
