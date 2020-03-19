@@ -51,11 +51,11 @@ function App(props) {
     props.handleGetUsers(data);
   }
 
-  const placeBid = () => {
+  const placeBid = (id, price) => {
     console.log(props.jobs.jobList[0]._id)
     const authCookie = cookie.load('auth');
-    let id = props.jobs.jobList[0]._id;
-    let body = {price: 10};
+    
+    let body = {price: price};
     props.handlePlaceBid({id: id, body: body, token: authCookie})
   }
 
@@ -81,16 +81,14 @@ function App(props) {
           </Then>
           <Else>
             <Nav setScreen={setScreen} />
-            <LogOut/>
-            <button onClick={_getUsers}>GET USERS TEST</button>
-            <button onClick={placeBid}>PLACE BID TEST</button>
-            <button onClick={closeJob}>CLOSE JOB TEST</button>
+            <LogOut/>      
             
             <When condition={screen === 'main'}>
               <JobList
                 jobs={props.jobs.jobList}
                 handleDetails={_toggleDetails}
                 handleDelete={_deleteItem}
+                handleBid={placeBid}
               />
             </When>
             <When condition={screen === 'dashboard'}>
@@ -104,7 +102,7 @@ function App(props) {
                 />
             </When>
             <When condition={props.jobs.showDetails}>
-              <JobItem handleDetails={_toggleDetails} item={props.jobs.details} />
+              <JobItem handleDetails={_toggleDetails} item={props.jobs.details} placeBid={placeBid}/>
             </When>
             <Footer />
           </Else>
@@ -125,7 +123,7 @@ const mapDispatchToProps = (dispatch, getState) => ({
   handlePost: data => dispatch(actions.postData(data)),
   handleToggle: id => dispatch(actions.toggle(id)),
   handleDelete: data => dispatch(actions.destroyData(data)),
-  handlePlaceBid: data => dispatch(actions.placeBid(data)),
+  handlePlaceBid: (id, price) => dispatch(actions.placeBid(id, price)),
   handleGetUsers: data => dispatch(actions._getUsers(data)),
   handleCloseJob: data => dispatch(actions.closeJobs(data))
 });

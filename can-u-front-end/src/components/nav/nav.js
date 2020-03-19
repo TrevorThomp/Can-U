@@ -1,4 +1,5 @@
 import React from 'react';
+import LogOut from '../logout/logout';
 import './nav.scss';
 
 /**
@@ -14,6 +15,9 @@ const Nav = props => {
         </li>
         <li>
           <span onClick={() => props.setScreen('main')}>Main</span>
+        </li>
+        <li>
+          <LogOut />
         </li>
       </ul>
     </div>
