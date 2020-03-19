@@ -1,4 +1,5 @@
 import React from 'react';
+import './nav.scss';
 
 /**
  * Component that renders a navigation bar
@@ -6,7 +7,7 @@ import React from 'react';
  */
 const Nav = props => {
   return(
-    <div>
+    <div id="nav">
       <ul>
         <li>
           <span onClick={() => props.setScreen('dashboard')}>Dashboard</span>

@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import cookie from 'react-cookies';
 import { connect } from "react-redux";
-import './App.css';
+import './style/App.css';
 import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
 import Footer from './components/footer/footer';
 import JobItem from './components/job-list/job-item';
 import JobList from './components/job-list/job-list';
 import Nav from './components/nav/nav';
+import Header from './components/header/header'
 import Splash from './components/splash/splash';
 import * as actions from './store/action';
 
@@ -75,6 +76,7 @@ function App(props) {
   return (
     <>
       <div className="App">
+        <Header />
         <If condition={!props.login.loggedIn}>
           <Then>
             <Splash />
