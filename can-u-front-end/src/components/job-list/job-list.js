@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import Auth from '../auth/auth';
 
 function jobList(props){
   
@@ -11,7 +11,7 @@ function jobList(props){
       <td>{job.price}</td>
       <td>{job.postedUser}</td>      
       <td><button onClick={() => props.handleDetails(job._id)}>Details</button></td>
-      <td><button onClick={() => props.handleDelete(job._id)}>DELETE</button></td>
+      <Auth capability='superuser'><td><button onClick={() => props.handleDelete(job._id)}>DELETE</button></td></Auth>
     </tr>
   );
   return (
