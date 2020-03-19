@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import jwt from 'jsonwebtoken';
 
 
 /**
@@ -7,9 +8,12 @@ import { connect } from 'react-redux';
  * @param {*} props 
  */
 const MyJobs = props => {
-  const jobs = props.jobs.filter(job => job.postedBy === props.user);
 
-  console.log([props.user])
+  const username = jwt.verify(props.user.token, 
+    'sauce').username;
+  const jobs = props.jobs.jobList.filter(job => job.postedUser === username);
+  
+  
   const listJobs = jobs.map(job => (
     <tr key={job._id}>
       <td>{job.name}</td>
@@ -38,7 +42,8 @@ const MyJobs = props => {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.login.user,
+  user: state.login,
+  jobs: state.jobs
 });
 
 const mapDispatchToProps = (dispatch, getState) => ({});
