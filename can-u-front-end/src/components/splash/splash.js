@@ -1,7 +1,10 @@
 import React from 'react';
 import Login from '../login/login';
 
-
+/**
+ * Component that renders a splash page that holds a login form and is shown if a users lands on the page without being logged in
+ * @param {*} props 
+ */
 const Splash = props => {
 
   return (

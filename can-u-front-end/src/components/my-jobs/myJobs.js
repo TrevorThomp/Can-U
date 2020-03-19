@@ -1,5 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+/**
+ * Component that renders a list of all of a users jobs
+ * @param {*} props 
+ */
 const MyJobs = props => {
   const jobs = props.jobs;
 
@@ -15,17 +20,23 @@ const MyJobs = props => {
     </tr>
   ));
   return (
-    <table>
-      <tbody>
-        <tr key="headings">
-          <td>Name</td>
-          <td>Bid</td>
-          <td>Description</td>
-        </tr>
-        {listJobs}
-      </tbody>
-    </table>
+    <div class="myjob-table">
+      <table>
+        <tbody>
+          <tr key="headings">
+            <td>Name</td>
+            <td>Bid</td>
+            <td>Description</td>
+          </tr>
+          {listJobs}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
-export default MyJobs;
+const mapsStateToProps = (state) => {
+  
+};
+
+export default connect(mapsStateToProps)(MyJobs);

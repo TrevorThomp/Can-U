@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Field, reduxForm } from "redux-form";
-import useForm from '../../hooks/'
+import useForm from '../../hooks/';
 
-
+/**
+ * Component to render form to add a new job
+ * @param {*} props 
+ */
 const TodoForm = props => {
   const { handleChange, handleSubmit } = useForm(props.handleSubmit);
   return (
@@ -24,6 +27,14 @@ const TodoForm = props => {
             type="number"
             component="input"
             placeholder="Price"
+          />
+        </label>
+        <label>
+          <span>Description</span>
+          <Field 
+          name='description'
+          type='textarea'
+          component='input'
           />
         </label>
         <button>Add Job</button>

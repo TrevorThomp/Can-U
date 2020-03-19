@@ -3,6 +3,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { If, Then } from '../conditionals/conditionals';
 
+/**
+ * Auth component to only render components if user has required capability
+ * @param {*} props 
+ */
 const Auth = props => {
 
     let okToRender = false;

@@ -1,7 +1,10 @@
 import React from "react";
-
 import "./modal.scss";
 
+/**
+ * Component that renders a modal to show job details
+ * @param {*} props 
+ */
 const Modal = props => {
   return (
     <div className="modal">

@@ -1,6 +1,10 @@
 import React from 'react';
 import './nav.scss';
 
+/**
+ * Component that renders a navigation bar
+ * @param {*} props 
+ */
 const Nav = props => {
   return(
     <div id="nav">

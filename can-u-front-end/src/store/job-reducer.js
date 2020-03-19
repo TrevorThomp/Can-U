@@ -4,6 +4,11 @@ const initialState = {
   details: {}
 };
 
+/**
+ * Reducer for jobs state
+ * @param {object} state
+ * @param {object} action
+ */
 export default (state = initialState, action) => {
   let { type, payload } = action;
 
