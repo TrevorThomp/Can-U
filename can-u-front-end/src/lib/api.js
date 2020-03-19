@@ -48,12 +48,12 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
   .then(response => response.text())
   .then(data => {
     if(data === '{"error":"Invalid User ID/Password"}'){
-      return {loggedIn: false, data: null};
+      return {loggedIn: false, data: null, loginStatus: false};
     } 
     else {
       console.log('signin data', data);
       cookie.save('auth', data);
-      return {loggedIn: true, data: data};
+      return {loggedIn: true, data: data, loginStatus: true};
     }
   })
     .catch(e =>
