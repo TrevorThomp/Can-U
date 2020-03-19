@@ -1,0 +1,17 @@
+.modal-container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+span {
+  padding: 2px;
+}
+
+button:hover {
+  cursor: pointer;
+}
