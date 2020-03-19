@@ -22,14 +22,14 @@ const MyJobs = props => {
       {/* <td>{job.description}</td> */}
       <td>{job.isOpen ? 'Open' : 'Closed'}</td>
 
-      <td class='jobButtons'>
+      <td className='jobButtons'>
         <button onClick={() => props.handleDelete(job)}>Delete</button>
       </td>
-      <td class='jobButtons'>
+      <td className='jobButtons'>
         <button onClick={() => props.handleDetails(job._id)}>Details</button>
       </td>
 
-      <td class='jobButtons'>
+      <td className='jobButtons'>
         <button onClick={() => props.handleCloseJob(job._id)}>Close Job</button>
       </td>
     </tr>

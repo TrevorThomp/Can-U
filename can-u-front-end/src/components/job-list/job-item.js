@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import Modal from '../modal/modal';
-import './job-item.scss'
+import './job-item.scss';
 
 /**
  * Component to render one job item is a list
@@ -9,28 +10,51 @@ import './job-item.scss'
 const JobItem = props => {
   const job = props.item || {};
   const [bid, setBid] = useState(0);
+  const [winningBid, setWinningBid] = useState();
+  const [currentBidder, setCurrentBidder] = useState(job.currentBidder)
   /**
    * @function Add Bid
    */
   const addBid = () => {
     bid >= job.price? alert(`Must bid less than current price of ${job.price}`): props.placeBid(job._id, bid);
+    if(bid < job.price) {
+      setWinningBid('You are now the leading bidder!');
+      setCurrentBidder(props.login.user.username);
+    }
   }
-
   return (
     <Modal title="Job" close={props.handleDetails}>
       <div className="modal-container">
-        <span>Name: {job.name}</span>
-        <span>Description: {job.description}</span>
-        <span>Price: ${job.price}</span>
-        <span>Posted by: {job.postedUser}</span>
+        <div id='description-container'>
+          <div id='description-1'>
+            <span>Name: {job.name}</span>
+            <span>Description: {job.description}</span>
+            <span>Posted by: {job.postedUser}</span>
+          </div>
+          <div id='description-2'>
+            <span>Current Bid: ${job.price}</span>
+            <span>Current Bidder: {currentBidder}</span>
+          </div>
+        </div>
         <label>
-          <span>Bid Amount:</span>
+          <span>Bid Amount: $</span>
           <input id="bid" onChange={e => setBid(e.target.value)} />
         </label>
-        <button onClick={() => {addBid(); props.handleDetails()}}>Place Bid</button>
+        <div>
+          <button id="modal-button" onClick={() => {addBid()}}>Place Bid</button>
+        </div>
+        <p>{winningBid}</p>
       </div>
     </Modal>
   );
 }
 
-export default JobItem;
+
+const mapStateToProps = state => ({
+  login: state.login
+});
+
+export default connect(
+  mapStateToProps,
+)(JobItem);
+// export default JobItem;
