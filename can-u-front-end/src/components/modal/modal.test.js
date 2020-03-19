@@ -1,5 +1,5 @@
 import React from "react";
-import Modal from "../components/modal/modal.js";
+import Modal from "./modal";
 
 import Enzyme, { mount, shallow, render } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";

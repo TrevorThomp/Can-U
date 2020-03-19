@@ -10,6 +10,7 @@ import cookie from 'react-cookies';
  * @param {function} errorHandler 
  */
 const callAPI = (url, method = "get", body, token, handler, errorHandler) => {
+  
   return fetch(url, {
     method: method,
     mode: "cors",
@@ -51,7 +52,7 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
       return {loggedIn: false, data: null, loginStatus: false};
     } 
     else {
-      console.log('signin data', data);
+      
       cookie.save('auth', data);
       return {loggedIn: true, data: data, loginStatus: true};
     }

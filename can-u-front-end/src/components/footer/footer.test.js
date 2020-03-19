@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from "../components/footer/footer.js";
+import Footer from "./footer.js";
 
-import Enzyme, { mount, shallow, render } from "enzyme";
+import Enzyme, {shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 Enzyme.configure({ adapter: new Adapter() });
 

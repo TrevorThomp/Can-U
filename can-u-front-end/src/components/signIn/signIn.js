@@ -13,6 +13,7 @@ const SignIn = props => {
   const [loginError, setLoginError] = useState();
 
   const handleInputChange = (e) => {
+    // eslint-disable-next-line default-case
     switch(e.target.name){
       case 'username':
         setUsername(e.target.value);

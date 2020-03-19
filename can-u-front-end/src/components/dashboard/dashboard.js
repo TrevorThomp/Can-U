@@ -12,8 +12,8 @@ const DashBoard = props => {
     <>
     <div className="dashBoardDiv">
       <Form handleSubmit={props.addJob}/>
-      <MyJobs jobs={props.jobs} handleDetails={props.handleDetails} handleDelete={props.handleDelete}/>
-      </div>
+      <MyJobs jobs={props.jobs} handleDetails={props.handleDetails} handleDelete={props.handleDelete} handleCloseJob={props.handleCloseJob}/>
+    </div>
     </>
   )
 }

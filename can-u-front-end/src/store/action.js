@@ -16,7 +16,8 @@ export const placeBid = payload => dispatch => {
  * @param {*} payload 
  */
 export const closeJobs = payload => dispatch => {
-  return callAPI(`${todoAPI}/jobs/close/${payload.id}`, "PUT", payload.token)
+  console.log(`${todoAPI}/jobs/close/${payload.id}`);
+  return callAPI(`${todoAPI}/jobs/close/${payload.id}`, "PUT", undefined, payload.token)
     .then(record => console.log(record));
 }
 
