@@ -26,9 +26,7 @@ const SignIn = props => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log('signin', username, password);
     const encodedStr = btoa(`${username}:${password}`);
-    console.log('encoded', encodedStr);
     props.handleSignIn(encodedStr);
   }
 

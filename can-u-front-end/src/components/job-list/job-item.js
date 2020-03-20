@@ -16,7 +16,6 @@ const JobItem = props => {
    * @function Add Bid
    */
   const addBid = () => {
-    console.log(bid);
     bid <= 0 ? alert('Bid must be greater than $0'): props.placeBid(job._id, bid);
     (bid >= job.price && bid > 0)? alert(`Must bid less than current price of ${job.price}`): props.placeBid(job._id, bid);
     if(bid < job.price && bid > 0) {
@@ -59,4 +58,3 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
 )(JobItem);
-// export default JobItem;

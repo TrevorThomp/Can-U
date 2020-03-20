@@ -10,8 +10,7 @@ import './myJobs.scss';
  */
 const MyJobs = props => {
   
-  const username = jwt.verify(props.user.token, 
-    'sauce').username;
+  const username = jwt.verify(props.user.token, 'sauce').username;
   const jobs = props.jobs.jobList.filter(job => job.postedUser === username);
   
   
@@ -19,7 +18,6 @@ const MyJobs = props => {
     <tr id='jobRow' key={job._id}>
       <td>{job.name}</td>
       <td>${job.price}</td>
-      {/* <td>{job.description}</td> */}
       <td>{job.isOpen ? 'Open' : 'Closed'}</td>
 
       <td className='jobButtons'>
@@ -41,7 +39,6 @@ const MyJobs = props => {
           <tr id="headings" key="headings">
             <td>Name</td>
             <td>Bid</td>
-            {/* <td>Description</td> */}
             <td>Status</td>
           </tr>
           {listJobs}
