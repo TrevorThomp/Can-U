@@ -75,14 +75,12 @@ const callAPISignUp = (url, body, errorHandler) => {
     headers: { "Content-Type": "application/json" },
     body: body ? JSON.stringify(body) : undefined
   })
-    .then(response => response.text())
-    .then(data => {
-      if(data.status === 500){
+    .then(response => {
+      console.log(response.status);
+      if(response.status === 500){
         return 'username taken';
       }else {
-        let token = data;
-        cookie.save('auth', token);
-        return token;
+        return response.text() 
       }
     })
     .catch(e =>
