@@ -14,6 +14,7 @@ const SignUp = props => {
 
 
   const handleInputChange = (e) => {
+    // eslint-disable-next-line default-case
     switch(e.target.name){
       case 'username':
         setUsername(e.target.value);
@@ -29,7 +30,6 @@ const SignUp = props => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log('signup', username, email, password);
     const body = {
       username: username,
       password: password,
