@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ead4b6f77295876efc383daf9e5d6767",
+    "revision": "94ba83b3870f91865fc5a82a06bb86f2",
     "url": "/can-u-job-front-end/index.html"
   },
   {
-    "revision": "4ea63dc1e2bb35fffd6b",
-    "url": "/can-u-job-front-end/static/css/main.e447d5ed.chunk.css"
+    "revision": "6d0aa5addee1e28e7af2",
+    "url": "/can-u-job-front-end/static/css/main.2903df26.chunk.css"
   },
   {
     "revision": "afc4818533019ba74bfd",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/can-u-job-front-end/static/js/2.bffe9a24.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4ea63dc1e2bb35fffd6b",
-    "url": "/can-u-job-front-end/static/js/main.5c4b1edd.chunk.js"
+    "revision": "6d0aa5addee1e28e7af2",
+    "url": "/can-u-job-front-end/static/js/main.7e98188e.chunk.js"
   },
   {
     "revision": "dce10f42842171704b10",
