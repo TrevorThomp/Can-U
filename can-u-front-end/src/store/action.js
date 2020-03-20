@@ -16,7 +16,6 @@ export const placeBid = payload => dispatch => {
  * @param {*} payload 
  */
 export const closeJobs = payload => dispatch => {
-  console.log(`${todoAPI}/jobs/close/${payload.id}`);
   return callAPI(`${todoAPI}/jobs/close/${payload.id}`, "PUT", undefined, payload.token)
     .then(record => console.log(record));
 }
@@ -120,7 +119,6 @@ export const destroy = payload => {
  * @param {*} payload 
  */
 export const signInFetch = payload => dispatch => {
-  console.log(todoAPI);
   return callAPIBasic(`${todoAPI}/signin`, payload)
     .then(results => dispatch(signIn(results)));
 }
@@ -130,7 +128,6 @@ export const signInFetch = payload => dispatch => {
  * @param {*} payload 
  */
 export const signIn = payload => {
-  console.log('login', payload);
   return {
     type: "LOGIN",
     payload: payload
@@ -143,7 +140,6 @@ export const signIn = payload => {
  */
 export const signUpFetch = (payload) => dispatch => {
   return callAPISignUp(`${todoAPI}/signup`, payload).then(result => {
-    console.log('fetch result', result);
     (result === 'username taken') ? dispatch(signUpFail(result)): dispatch(signUpSuccess(result));
   });
 };
