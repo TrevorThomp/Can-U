@@ -27,7 +27,6 @@ export default (state = initialState, action) => {
       }else {
         userInfo = null;
       }
-      console.log('user', userInfo);
       return {
         token: payload.data,
         loggedIn: payload.loggedIn,

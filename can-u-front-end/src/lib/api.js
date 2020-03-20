@@ -52,7 +52,6 @@ const callAPIBasic = (url, auth, handler, errorHandler) => {
       return {loggedIn: false, data: null, loginStatus: false};
     } 
     else {
-      
       cookie.save('auth', data);
       return {loggedIn: true, data: data, loginStatus: true};
     }
@@ -76,11 +75,12 @@ const callAPISignUp = (url, body, errorHandler) => {
     headers: { "Content-Type": "application/json" },
     body: body ? JSON.stringify(body) : undefined
   })
-    .then(response => {
-      if(response.status === 500){
+    .then(response => response.text())
+    .then(data => {
+      if(data.status === 500){
         return 'username taken';
       }else {
-        let token = response.text();
+        let token = data;
         cookie.save('auth', token);
         return token;
       }
