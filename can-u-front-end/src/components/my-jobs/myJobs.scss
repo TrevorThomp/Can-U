@@ -15,12 +15,14 @@
         background-color: $light;
         width: 95%;
         border-collapse: collapse;
+        border-radius: 15px;
         border-spacing: 20px 20px;
 
     }
 
     tbody {
         background-color: $light;
+
     }
 
     #jobRow {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Auth from '../auth/auth';
+import './job-list.scss';
 
 /**
  * Component for the rendering a list of all jobs
@@ -12,7 +13,7 @@ function jobList(props){
   const listJobs = jobs.map(job => 
 
 
-        <tr key={job._id}>
+        <tr id='jobRow' key={job._id}>
           <td>{job.name}</td>
           <td>{job.price}</td>
           <td>{job.currentBidder}</td>
@@ -25,9 +26,11 @@ function jobList(props){
   );
 
   return (
+    <div className="jobList-table">
     <table>
       <tbody>
-        <tr key="headings">
+        <h2>Job Board</h2>
+        <tr id="headings" key="headings">
           <td>Name</td>
           <td>Bid</td>
           <td>Current Bidder</td>
@@ -36,6 +39,7 @@ function jobList(props){
         {listJobs}
       </tbody>
     </table>
+    </div>
   );
 }
 
