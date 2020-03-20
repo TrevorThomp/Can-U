@@ -20,7 +20,6 @@ MVPs
 6. On the detail view, a user can place a bid.
 7. Have a slightly different super user dashboard with the ability to delete or edit any job within the database.
 8. Have users be notified of activity through email on their jobs and jobs they have bid.
-9. Dark mode/light mode options
 10. Job history
 
 # Stretch
