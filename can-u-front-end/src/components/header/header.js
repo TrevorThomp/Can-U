@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 import "./header.scss";
 
 /**
@@ -10,8 +10,15 @@ const Header = props => {
   return (
     <header>
       <h1>CanU</h1>
+      {/* <h4>Hello, {props.login.user.username}</h4> */}
     </header>
   );
 };
 
-export default Header;
+const mapStateToProps = state => ({
+  login: state.login
+});
+
+export default connect(
+  mapStateToProps,
+)(Header);

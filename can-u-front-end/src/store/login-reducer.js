@@ -2,8 +2,9 @@ import jwt from 'jsonwebtoken';
 import cookie from "react-cookies";
 
 const cookieToken = cookie.load("auth");
+console.log(cookieToken);
 const token = cookieToken || null;
-
+console.log(token);
 const initialState = {
   token: token,
   loggedIn: !!token,
@@ -34,6 +35,7 @@ export default (state = initialState, action) => {
         user: userInfo
       }
     case "SIGN_UP_SUCCESS":
+      cookie.save('auth', payload);
       return {
         token: payload,
         loggedIn: true,
