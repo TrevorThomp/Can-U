@@ -34,6 +34,7 @@ const MyJobs = props => {
   ));
   return (
     <div className="myjob-table">
+      <h3>My Jobs</h3>
       <table>
         <tbody>
           <tr id="headings" key="headings">

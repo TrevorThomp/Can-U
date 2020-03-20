@@ -12,7 +12,7 @@ const TodoForm = props => {
   return (
     <>
     <div id="formDiv">
-      <h3>Add Job</h3>
+      <h3>Add a Job</h3>
       <form className="jobForm" onChange={handleChange} onSubmit={handleSubmit}>
         <label>
           <span>Job</span>
@@ -39,7 +39,7 @@ const TodoForm = props => {
           component='input'
           />
         </label>
-        <button>Add Job</button>
+        <button id="addJobButton">Add Job</button>
       </form>
       </div>
     </>

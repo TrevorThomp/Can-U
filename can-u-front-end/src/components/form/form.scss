@@ -3,8 +3,8 @@
 
 #formDiv {
     display:flex;
-    flex-direction:row;
-    justify-content: flex-start;
+    flex-direction:column;
+    border-radius: 15px;
     margin: 2em;
     background-color: $darkAccent;
     width: 50%;
@@ -12,13 +12,14 @@
 
 h3 {
     font-family: $headerFont;
+    color: white;
     font-size: 30px;
+    text-shadow: 4px 4px #00000046;
 }
 
 .jobForm {
     font-family: $mainFont;
     display:flex;
-    justify-content: flex-start;
     margin: 2em;
     flex-direction:column;
   
@@ -26,13 +27,35 @@ h3 {
     label {
         display: flex;
         flex-direction:column;
-        width: 175px;
+        width: 100%;
         font-size: 20px;
         margin-bottom: 1.5em;
         color: white;
-        background-color: rgba(90, 90, 90, 0.308);
      
+    }
+
+    input {
+        height: 2.5em;
+    }
+
+    #addJobButton {
+        font-family: $mainFont;
+        cursor: pointer;
+        color: $darkAccent;
+        font-size: 16px;
+        text-transform: uppercase;
+        width: 50%;
+        text-align: center;
+        border: 0;
+        padding: 10px 0;
+        border-radius: 5px;
+      
+      
+        
+        &:hover {
+          background-color: darken($dark, 5%);
     }
 }
 
+}
 }
