@@ -28,7 +28,7 @@ const JobItem = props => {
       <div className="modal-container">
         <div id='description-container'>
           <div id='description-1'>
-            <span>Name: {job.name}</span>
+            <span>Job Title: {job.name}</span>
             <span>Description: {job.description}</span>
             <span>Posted by: {job.postedUser}</span>
           </div>
@@ -41,7 +41,7 @@ const JobItem = props => {
           <span>Bid Amount: $</span>
           <input id="bid" onChange={e => setBid(e.target.value)} />
         </label>
-        <div>
+        <div id="modal-btn-container">
           <button id="modal-button" onClick={() => {addBid()}}>Place Bid</button>
         </div>
         <p>{winningBid}</p>

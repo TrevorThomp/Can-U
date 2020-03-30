@@ -3,28 +3,25 @@
 .jobList-table {
 	font-family: $mainFont;
 	display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	border-radius: 15px;
 	margin: 2em;
 
 	table {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		border-radius: 15px;
-		// margin: 1em;
 		background-color: $darkAccent;
-		// width: 95%;
 		border-collapse: collapse;
-		// border-spacing: 20px 20px;
 	}
 
 	#jobRow {
 		background-color: $mainColor;
 		border-bottom: 2px solid $light;
-		color: $light;
+    color: $light;
 
 		td {
 			padding-bottom: 0.5em;
@@ -33,12 +30,11 @@
 	}
 
 	#headings {
-    display: flex;
-    justify-content: space-around;
-    color: $light;
+		display: flex;
+		justify-content: space-around;
+		color: $light;
 		font-size: 1.2em;
-    font-weight: bold;
-
+		font-weight: bold;
 	}
 }
 
@@ -47,4 +43,21 @@ h2 {
 	color: $light;
 	font-size: 40px;
 	text-shadow: 4px 4px #00000046;
+}
+
+@media (min-width: 720px){
+  .jobList-table {
+    table {
+      width: 100%;
+      tbody {
+        width: 100%;
+      }
+    }
+    #jobRow {
+      display: flex;
+      justify-content: space-around;
+      text-align: left;
+      align-items: center;
+    }
+  }
 }

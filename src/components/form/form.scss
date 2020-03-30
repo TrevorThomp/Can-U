@@ -48,9 +48,10 @@
 			padding: 10px 0;
 			border-radius: 5px;
 
-			&:hover {
-				background-color: darken($dark, 5%);
-			}
+      &:hover {
+        background-color: $mainColor;
+        color: white;
+      }
 		}
 	}
 }

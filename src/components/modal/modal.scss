@@ -1,80 +1,129 @@
-@import '../../style/variables';
+@import "../../style/variables";
 
 .modal {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+  z-index: 100;
 
-    bottom:0;
-    left:0;
-    position:absolute;
-    right:0;
-    top:0;
-    z-index:100;
+	&:after {
+		background: #000;
+		bottom: 0;
+		content: " ";
+		left: 0;
+		opacity: 0.5;
+		position: absolute;
+		right: 0;
+		top: 0;
+  }
+
+  .modal-window {
+    color: white;
+    font-family: $mainFont;
+    font-size: 1em;
+    background-color: $darkAccent;
+  }
+
+  .modal-interior {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  }
+
+  #modal-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
-    &:after {
-  
-        background:#000;
-        bottom:0;
-        content:' ';
-        left:0;
-        opacity:.5;
-        position:absolute;
-        right:0;
-        top:0;
-  
-    }
-  
-    > div {
-        background:#fff;
-        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        box-sizing:border-box;
-        border-radius: 5px;
-        display:flex;
-        flex-direction:column;
-        height:28%;
-        margin:auto;
-        padding:0;
-        position:relative;
-        top:50%;
-        transform: translateY(-50%);
-        width:35%;
-        z-index:1000;
-  
-        > header {
-            background: $mainColor;
-            border-bottom: 0 none;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
-            display:flex;
-            font-size:1em;
-            font-weight:bold;
-            height:1.5em;
-            line-height:1.5em;
-            padding: .25em 1em;
-  
-            span {
-                color:#000;
-                flex:1;
-            }
-  
-            button {
-                background: inherit;
-                border: 0;
-                cursor:pointer;
-                order: 1;
-                text-align:center;
-  
-                &:hover {
-                    background:#000;
-                    color:#fff;
-                }
-            }
-  
-        }
-  
-        > div {
-            flex:1;
-            overflow:auto;
-            padding:25px;
-        }
+  #modal-button {
+    font-family: $mainFont;
+			cursor: pointer;
+			color: $darkAccent;
+      font-size: 16px;
+      width: 50%;
+			text-transform: uppercase;
+			text-align: center;
+			border: 0;
+			padding: 10px 0;
+			border-radius: 5px;
+
+      &:hover {
+        background-color: $mainColor;
+        color: white;
       }
+  }
+
+	> div {
+		box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+		box-sizing: border-box;
+		border-radius: 5px;
+		display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+		height: 40%;
+		margin: auto;
+		padding: 0;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 85%;
+		z-index: 1000;
+
+		> header {
+			background: $mainColor;
+			border-bottom: 0 none;
+			border-top-left-radius: 5px;
+			border-top-right-radius: 5px;
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+			display: flex;
+			font-size: 1em;
+			font-weight: bold;
+			height: 1.5em;
+			line-height: 1.5em;
+			padding: 0.25em 1em;
+
+			span {
+				color: white;
+        flex: 1;
+			}
+
+			button {
+				background: inherit;
+				border: 0;
+				cursor: pointer;
+				order: 1;
+        text-align: center;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #fff;
+        margin-top: 2px;
+        transition: 0.3s ease-in;
+
+				&:hover {
+					transform: scale(0.7);
+				}
+			}
+		}
+
+		> div {
+			flex: 1;
+			overflow: auto;
+			padding: 25px;
+		}
+	}
+}
+
+@media (min-width: 720px) {
+  .modal {
+    > div {
+      width: 65%;
+      height: 35%;
     }
+  }
+}

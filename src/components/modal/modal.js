@@ -8,12 +8,12 @@ import "./modal.scss";
 const Modal = props => {
   return (
     <div className="modal">
-      <div>
+      <div className="modal-window">
         <header>
           <span className="title">{props.title}</span>
           <button onClick={props.close}>X</button>
         </header>
-        <div>{props.children}</div>
+        <div className="modal-interior">{props.children}</div>
       </div>
     </div>
   );
