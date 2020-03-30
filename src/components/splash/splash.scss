@@ -1,24 +1,24 @@
-@import '../../style/variables';
+@import "../../style/variables";
 
+h1 {
+	font-family: $mainFont;
+}
 
-    h1 {
-        font-family: $mainFont;
-    }
+ul {
+	list-style-type: none;
+  text-align: left;
+  li {
+    padding: 5px;
+  }
+}
 
-    ul {
-        list-style-type: none;
-       }
+p {
+	width: 500px;
+	font-size: 20px;
+}
 
-       p {
-           width: 500px;
-           font-size: 20px;
-       }
-
-    .splashDiv {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-    }
+.splashDiv div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

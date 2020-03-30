@@ -13,8 +13,7 @@ const Splash = props => {
 
   return (
     <div className="splashDiv">
-      <h1>Welcome to Can-U</h1>
-      <p id="p">Do you need help moving? mowing your lawn? setting up ikea furniture? There are not a lot of options to find handy help. Search for handy people across the nation!</p>
+      <p id="p">The premiere site for posting jobs you need done, and for finding jobs you would like to work on!</p>
       <ul>
         <li><img src={auction}/> Create a job, and let people bid to do that job for you!</li>
         <li><img src={bid}/>Whoever bids the lowest amount of money to do that job, wins!</li>
