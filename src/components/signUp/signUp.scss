@@ -1,52 +1,43 @@
-@import '../../style/variables';
+@import "../../style/variables";
 
-.signUpDiv {
-    display: flex;
-    width: 70%;
-    flex-direction: column;
-    justify-content: end;
+#signUpDiv {
+	display: flex;
+	width: 70%;
+	flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-  .signUpForm {
-    background-image: linear-gradient(to top, $darkAccent 0%, $mainColor 100%);
-    padding: 30px 30px 30px 30px;
-    border-radius: 10px;
-    top: 50%;
-    left: 50%;
-    width: 400px;
-    box-shadow: 5px 10px 10px rgba($dark, 0.2);
-      
-  
+.signUpForm {
+	background-image: linear-gradient(to top, $darkAccent 0%, $mainColor 100%);
+	padding: 30px 30px 30px 30px;
+	border-radius: 10px;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	box-shadow: 5px 10px 10px rgba($dark, 0.2);
 
-    input {
-    font-family: $monoFont;
-    border-radius: 5px;
-    font-size: 16px;
-    background: $light;
-    width: 100%;
-    border: 0;
-    padding: 10px 10px;
-    margin: 15px -10px;
-  
-  }
+	input {
+		font-family: $monoFont;
+		border-radius: 5px;
+		font-size: 16px;
+		background: $light;
+		width: 100%;
+		border: 0;
+		padding: 10px 10px;
+		margin: 15px -10px;
+	}
 }
 
-  #loginButton {
-    font-family: $mainFont;
-    cursor: pointer;
-    color: $darkAccent;
-    font-size: 16px;
-    text-transform: uppercase;
-    width: 50%;
-    text-align: center;
-    border: 0;
-    padding: 10px 0;
-    border-radius: 5px;
-  
-  
-    
-    &:hover {
-      background-color: darken($dark, 5%);
-    }
-  }
-  
+#loginButton {
+	font-family: $mainFont;
+	cursor: pointer;
+	color: $darkAccent;
+	font-size: 16px;
+	text-transform: uppercase;
+	width: 50%;
+	text-align: center;
+	border: 0;
+	padding: 10px 0;
+	border-radius: 5px;
+}

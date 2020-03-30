@@ -15,14 +15,14 @@
     align-items: center;
 		border-radius: 15px;
 		// margin: 1em;
-		background-color: $mainColor;
+		background-color: $darkAccent;
 		// width: 95%;
 		border-collapse: collapse;
 		// border-spacing: 20px 20px;
 	}
 
 	#jobRow {
-		background-color: $dark;
+		background-color: $mainColor;
 		border-bottom: 2px solid $light;
 		color: $light;
 

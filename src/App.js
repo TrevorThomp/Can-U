@@ -4,7 +4,6 @@ import cookie from 'react-cookies';
 import { connect } from "react-redux";
 import { Else, If, Then, When } from './components/conditionals/conditionals';
 import Dashboard from './components/dashboard/dashboard';
-import Footer from './components/footer/footer';
 import Header from './components/header/header';
 import JobItem from './components/job-list/job-item';
 import JobList from './components/job-list/job-list';
@@ -55,7 +54,6 @@ function App(props) {
     props.handleGetJobs();
   };
 
-  
   /**
    * Call Place Bid action
    * @param {*} id 
@@ -116,7 +114,6 @@ function App(props) {
             <When condition={props.jobs.showDetails}>
               <JobItem handleDetails={_toggleDetails} item={props.jobs.details} placeBid={placeBid}/>
             </When>
-            <Footer />
           </Else>
         </If>
       </div>
