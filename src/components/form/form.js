@@ -19,7 +19,7 @@ const TodoForm = props => {
           <Field
             name="name"
             component="input"
-            placeholder="Add Job"
+            placeholder="Job Title"
           />
         </label>
         <label>
@@ -28,7 +28,7 @@ const TodoForm = props => {
             name="price"
             type="number"
             component="input"
-            placeholder="Price"
+            placeholder="Starting Bid"
           />
         </label>
         <label>
@@ -37,6 +37,7 @@ const TodoForm = props => {
           name='description'
           type='textarea'
           component='input'
+          placeholder="Job Description..."
           />
         </label>
         <button id="addJobButton">Add Job</button>

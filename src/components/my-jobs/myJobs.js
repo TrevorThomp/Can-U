@@ -38,9 +38,9 @@ const MyJobs = props => {
       <table>
         <tbody>
           <tr id="headings" key="headings">
-            <td>Name</td>
-            <td>Bid</td>
-            <td>Status</td>
+            <td>Job Title</td>
+            <td>Current Bid</td>
+            <td>Job Status</td>
           </tr>
           {listJobs}
         </tbody>

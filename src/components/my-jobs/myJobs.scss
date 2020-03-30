@@ -1,53 +1,42 @@
-@import '../../style/variables';
+@import "../../style/variables";
 
 .myjob-table {
-    font-family: $mainFont;
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-radius: 15px;
-    margin: 2em;
-    background-color: $darkAccent;
-    width: 50%;
+	font-family: $mainFont;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	border-radius: 15px;
+	margin: 2em;
+	background-color: $darkAccent;
+	width: 75%;
 
-    table {
-        margin: 1em;
-        background-color: $light;
-        width: 95%;
-        border-collapse: collapse;
-        border-radius: 15px;
-        border-spacing: 20px 20px;
+	table {
+		margin: 1em;
+		width: 95%;
+		border-collapse: collapse;
+		border-radius: 15px;
+		border-spacing: 20px 20px;
+	}
 
-    }
+	#jobRow {
 
-    tbody {
-        background-color: $light;
+		td {
 
-    }
+			padding-bottom: 0.5em;
+			padding-top: 0.5em;
+		}
+	}
 
-    #jobRow {
-        background-color:$light;
-        box-shadow: 5px 5px 5px rgba($dark, 0.3);
+	#headings {
+    color: white;
+		font-size: 1.25em;
+		font-weight: bold;
+	}
 
-        td {
-            padding-bottom: .5em;
-            padding-top: .5em;
-        }
-    }
-
-    #headings {
-        font-size: 1.25em;
-        font-weight: bold;
-        td {
-            text-decoration: underline;
-        }
-    }
-
-
-    h3 {
-        font-family: $headerFont;
-        color: white;
-        font-size: 30px;
-        text-shadow: 4px 4px #00000046;
-    }
+	h3 {
+		font-family: $headerFont;
+		color: white;
+		font-size: 30px;
+		text-shadow: 4px 4px #00000046;
+	}
 }

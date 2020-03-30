@@ -1,61 +1,56 @@
-@import '../../style/variables';
-
+@import "../../style/variables";
 
 #formDiv {
-    display:flex;
-    flex-direction:column;
-    border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	border-radius: 15px;
+	margin: 2em;
+	background-color: $darkAccent;
+	width: 75%;
+
+	h3 {
+		font-family: $headerFont;
+		color: white;
+		font-size: 30px;
+		text-shadow: 4px 4px #00000046;
+	}
+
+	.jobForm {
+		font-family: $mainFont;
+		display: flex;
     margin: 2em;
-    background-color: $darkAccent;
-    width: 50%;
+    margin-top: 0.5em;
+		flex-direction: column;
+		align-items: center;
 
+		label {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			font-size: 20px;
+			margin-bottom: 1.5em;
+			color: white;
+		}
 
-h3 {
-    font-family: $headerFont;
-    color: white;
-    font-size: 30px;
-    text-shadow: 4px 4px #00000046;
-}
+		input {
+			height: 2.5em;
+		}
 
-.jobForm {
-    font-family: $mainFont;
-    display:flex;
-    margin: 2em;
-    flex-direction:column;
-  
-   
-    label {
-        display: flex;
-        flex-direction:column;
-        width: 100%;
-        font-size: 20px;
-        margin-bottom: 1.5em;
-        color: white;
-     
-    }
+		#addJobButton {
+			font-family: $mainFont;
+			cursor: pointer;
+			color: $darkAccent;
+			font-size: 16px;
+			text-transform: uppercase;
+			width: 50%;
+			text-align: center;
+			border: 0;
+			padding: 10px 0;
+			border-radius: 5px;
 
-    input {
-        height: 2.5em;
-    }
-
-    #addJobButton {
-        font-family: $mainFont;
-        cursor: pointer;
-        color: $darkAccent;
-        font-size: 16px;
-        text-transform: uppercase;
-        width: 50%;
-        text-align: center;
-        border: 0;
-        padding: 10px 0;
-        border-radius: 5px;
-      
-      
-        
-        &:hover {
-          background-color: darken($dark, 5%);
-    }
-}
-
-}
+			&:hover {
+				background-color: darken($dark, 5%);
+			}
+		}
+	}
 }
