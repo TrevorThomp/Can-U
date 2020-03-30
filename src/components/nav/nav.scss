@@ -1,37 +1,41 @@
-@import '../../style/variables';
+@import "../../style/variables";
 
 #nav {
-    background: $mainColor;
-    box-shadow: 5px 5px 5px rgba($dark, 0.3);
+	font-family: $headerFont;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: $mainColor;
+	box-shadow: 5px 5px 5px rgba($dark, 0.3);
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
 
-      li {
-        display: inline-block;
-        padding: 0.5rem 2rem;
-        position: relative;
+		li {
+			display: inline-block;
+			padding: 0.5rem 2rem;
+			position: relative;
 
-        span {
-          color: #111;
-          text-decoration: none;
+			span {
+				color: white;
+				text-decoration: none;
 
-          &:after {
-            bottom: 0;
-            content: "";
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-          }
+				&:after {
+					bottom: 0;
+					content: "";
+					left: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+			}
 
-        }
-
-        &:hover {
-          background: rgb(255, 255, 255);
-          }
-        }
-      }
-    }
+			&:hover {
+				background: $darkAccent;
+				cursor: pointer;
+			}
+		}
+	}
+}
