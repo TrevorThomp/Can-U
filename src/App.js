@@ -54,15 +54,8 @@ function App(props) {
   const _getJobs = () => {
     props.handleGetJobs();
   };
-  /**
-   * Call get users action
-   * @param {*} data 
-   */
-  const _getUsers = data => {
-    const authCookie = cookie.load('auth')
-    data.token = authCookie;
-    props.handleGetUsers(data);
-  }
+
+  
   /**
    * Call Place Bid action
    * @param {*} id 

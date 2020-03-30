@@ -15,12 +15,14 @@ function jobList(props){
 
         <tr id='jobRow' key={job._id}>
           <td>{job.name}</td>
-          <td>{job.price}</td>
+          <td>${job.price}</td>
           <td>{job.currentBidder}</td>
-          <td>{job.postedUser}</td>      
+          <td>{job.postedUser}</td> 
+          <div id="button-container">
           <td><button onClick={() => props.handleDetails(job._id)}>Details</button></td>
           
           <Auth capability='superuser'><td><button onClick={() => props.handleDelete(job)}>Delete</button></td></Auth>
+            </div>     
         </tr>
 
   );
@@ -31,7 +33,7 @@ function jobList(props){
       <tbody>
         <h2>Job Board</h2>
         <tr id="headings" key="headings">
-          <td>Name</td>
+          <td>Title</td>
           <td>Bid</td>
           <td>Current Bidder</td>
           <td>Owner</td>
