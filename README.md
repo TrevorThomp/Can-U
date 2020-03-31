@@ -2,10 +2,14 @@
 
 CanU aims to provide a platform that allows users to post jobs they would like done for them. This provides other users the ability to bid on jobs that they are interested in.
 
+![Dashboard-Picture](./assets/dashboard.png)
+
 ## Table of Contents
 * [General Info](#general-info)
 * [Technologies](#technologies)
 * [Setup](#setup)
+* [Live Demo](#live-demo)
+* [API-Server](#api-server)
 
 ## General Info
 
@@ -29,24 +33,13 @@ Project is created with:
 To run this project, install it locally with npm:
 
 ```
+$ cd Can-U
 $ npm install
 $ npm start
-```
+``` 
 
-### Admin 
+## Live Demo
+Here is the live demo: https://trevorthomp.github.io/Can-U/
 
-If you are logged in with admin rights you will have one additional feature available to you:
-
-When you're on the main screen presented with all the jobs in the database, you will see an additional button to the right of each job; delete. As admin you reserve the right to delete anyjob from any user for being inappropriate, stagnant, etc.  
-
-# Deployment
-[Deployment](https://trevorthomp.github.io/Can-U/)
-
-# API Server Repo
-[API-Server](https://github.com/Apprenti-401-ProjectOne/ProjectOne)
-
-## Collaborators
-- Trevor Thompson
-- Natalie Alway
-- Travis Skyles
-- David Vloedman
+## API Server
+API Server: https://github.com/Apprenti-401-ProjectOne/ProjectOne
