@@ -1,20 +1,52 @@
-# 401 Final project - CanU
-## Authors
-- Natalie Alway
-- Travis Skyles
-- Trevor Thompson
-- David Vloedman
+# CanU - Job Board
 
-# Problem Domain
-Do you need help moving? mowing your lawn? setting up ikea furniture? There are not a lot of options to find handy help. Our application can assist you in your search to find handy people across the nation! Our application will allow a user to login or sign up using an Oauthorization process, once in our application that user will be able to post job requests. They will be able to have a role that can create a job, update the information, or delete the job posting. Other users are able to browse the job postings and "bid" to do the job.
-Job management and bidding system
-Our project aims to allow users to be able to post jobs. Other users can then post a bid to do the job. The creator can accept bids and then close the job.The user has privileges over their own jobs. Admin users also exist and have privileges to all jobs.
+CanU aims to provide a platform that allows users to post jobs they would like done for them. This provides other users the ability to bid on jobs that they are interested in.
 
-# Instructions/Setup
-[Setup](./Reactinstructions.md)
+## Table of Contents
+* [General Info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
+
+## General Info
+
+From the splash screen you will be presented a form to login, alternatively, if you have no account, you can click the create a user button which will show a registration form.
+
+When you have logged in, you will then land on the user dashboard. On the left you can create a job by added information to Job, Description and Price fields followed by clicking on the add job button.
+
+When you have a job created, it will appear in the pane to the right of the screen. This contains all jobs attached to your user. From here you can control your jobs by deleting them or closing them to future bids.
+
+From the Nav under the CanU banner, you can click main. This will bring you to a screen with a list of every open job within the database. From here, you can click the details button and a modal dialog will open. It will show you the details of the job with an added field describing the details of the job. Within this modal, you have the option of entering a price you're willing to get paid for the job, as long as it is lower than the current bid price. 
+
+## Technologies
+Project is created with:
+
+* React version: 16.13
+* Redux version: 4.0.5
+* JsonWebToken version: 8.5.1
+* React-cookies version: 0.1.1
+
+## Setup
+To run this project, install it locally with npm:
+
+```
+$ npm install
+$ npm start
+```
+
+### Admin 
+
+If you are logged in with admin rights you will have one additional feature available to you:
+
+When you're on the main screen presented with all the jobs in the database, you will see an additional button to the right of each job; delete. As admin you reserve the right to delete anyjob from any user for being inappropriate, stagnant, etc.  
 
 # Deployment
-[CanU](https://401-backend.github.io/can-u-job-front-end/)
+[Deployment](https://trevorthomp.github.io/Can-U/)
 
 # API Server Repo
-* [API-Server](https://github.com/Apprenti-401-ProjectOne/ProjectOne)
+[API-Server](https://github.com/Apprenti-401-ProjectOne/ProjectOne)
+
+## Collaborators
+- Trevor Thompson
+- Natalie Alway
+- Travis Skyles
+- David Vloedman
